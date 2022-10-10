@@ -7,7 +7,11 @@ export const Container = styled.header`
   z-index: 500;
   width: 100%;
   border: 0px solid transparent;
-  transition: background-color 0.3s ease-in, border 0.3s ease-in;
+
+  transition: 0.3s ease-in, border 0.3s ease-in;
+  a {
+    transition: color 0.3s ease-in, border 0.3s ease-in;
+  }
   @media (max-width: ${(props) => props.theme.breakpoints.tabletLan}) {
     display: none;
   }

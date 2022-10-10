@@ -1,9 +1,0 @@
-export { default as Sales } from './sales.webp';
-export { default as SalesHover } from './sales-hover.webp';
-export { default as Marketing } from './marketing.webp';
-export { default as MarketingHover } from './marketing-hover.webp';
-export { default as Startup } from './startup.webp';
-export { default as StartupHover } from './startup-hover.webp';
-export { default as News } from './news-and-blog.webp';
-export { default as Partners } from './partners.webp';
-export { default as Referral } from './referral.webp';

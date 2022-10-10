@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import { IoIosArrowDown } from 'react-icons/io';
 
 import { Logo } from 'assets/Logos';
-import { Button, ContactButton } from 'components/common/Buttons';
+import { Button } from 'components/common/Buttons';
 
 import ServicesItem from './ServicesItem';
 
@@ -46,7 +46,7 @@ const Header = () => {
   ];
 
   const changeNavBar = () => {
-    if (window.scrollY >= 50) {
+    if (window.scrollY >= 200) {
       setNavBar(true);
     } else {
       setNavBar(false);
@@ -80,7 +80,7 @@ const Header = () => {
             <Link
               to='/about'
               style={{
-                color: activeNavItem === 'About' ? 'rgb(246,95,48)' : 'black',
+                color: activeNavItem === 'About' ? 'rgb(246,95,48)' : 'white',
               }}
             >
               About
@@ -89,7 +89,7 @@ const Header = () => {
 
           <NavItem
             style={{
-              color: activeNavItem === 'Services' ? 'rgb(246,95,48)' : 'black',
+              color: activeNavItem === 'Services' ? 'rgb(246,95,48)' : 'white',
             }}
             onMouseEnter={() => setActiveNavItem('Services')}
             onMouseLeave={() => setActiveNavItem('')}
@@ -116,7 +116,7 @@ const Header = () => {
             <Link
               to='/pricing'
               style={{
-                color: activeNavItem === 'Pricing' ? 'rgb(246,95,48)' : 'black',
+                color: activeNavItem === 'Pricing' ? 'rgb(246,95,48)' : 'white',
               }}
             >
               Pricing
@@ -130,7 +130,7 @@ const Header = () => {
             <Link
               to='/blog'
               style={{
-                color: activeNavItem === 'Blog' ? 'rgb(246,95,48)' : 'black',
+                color: activeNavItem === 'Blog' ? 'rgb(246,95,48)' : 'white',
               }}
             >
               Blog

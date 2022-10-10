@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import { FormBackground } from 'assets/Footer';
-
 export const Container = styled.footer`
   position: relative;
   background-color: ${(props) => props.theme.colors.blue};

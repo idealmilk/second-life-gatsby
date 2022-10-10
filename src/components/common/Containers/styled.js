@@ -6,6 +6,10 @@ export const InnerWrap = styled.div`
   margin: auto;
 `;
 
+export const TightInnerWrap = styled(InnerWrap)`
+  max-width: 1100px;
+`;
+
 export const HeaderWrap = styled.div`
   width: 700px;
   max-width: 90%;

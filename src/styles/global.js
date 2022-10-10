@@ -1,12 +1,25 @@
 import * as styled from 'styled-components';
 
+import GothamBook from './../assets/Fonts/Gotham-Book.otf';
+import GothamBold from './../assets/Fonts/Gotham-Bold.otf';
+
 const GlobalStyles = styled.createGlobalStyle`
+  @font-face {
+    font-family: 'Gotham Book';
+    src: url(${GothamBook}) format('woff');
+  }
+
+  @font-face {
+    font-family: 'Gotham Bold';
+    src: url(${GothamBold}) format('woff');
+  }
+
   *,
   html,
   body {
     margin: 0;
     background-color: #fff;
-    font-family: 'gesta', sans-serif;
+    font-family: 'Gotham Book', sans-serif;
     font-size: 10px;
     font-style: normal;
     font-weight: 400;
@@ -24,13 +37,12 @@ const GlobalStyles = styled.createGlobalStyle`
   h2,
   h3 {
     color: ${(props) => props.theme.colors.black};
-    font-style: normal;
-    font-weight: 400;
+    font-family: 'Gotham Bold';
     line-height: 1.1;
   }
 
   h1 {
-    font-size: 6rem;
+    font-size: 7rem;
     @media (max-width: 950px) {
       font-size: 4rem;
     }
@@ -66,7 +78,7 @@ const GlobalStyles = styled.createGlobalStyle`
 
   p {
     color: ${(props) => props.theme.colors.black};
-    font-size: 1.6rem;
+    font-size: 2rem;
     line-height: 1.7;
   }
 
@@ -262,6 +274,9 @@ const GlobalStyles = styled.createGlobalStyle`
   .active {
     background-color: white !important;
     border-bottom: 1px solid ${(props) => props.theme.colors.lightGray} !important;
+    a {
+      color: black !important;
+    }
   }
 
   .shadow-container {

@@ -1,12 +1,13 @@
 import React from 'react';
 
 import MainLayout from 'layouts/MainLayout';
-import { SEO } from 'components';
+import { Hero, SEO } from 'components';
 
 const IndexPage = () => {
   return (
     <MainLayout>
       <SEO />
+      <Hero />
     </MainLayout>
   );
 };

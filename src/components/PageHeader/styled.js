@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import { ContactPageHeaderHero, PageHeaderHero } from 'assets/Layout';
-
 export const Container = styled.div`
   position: relative;
 `;
