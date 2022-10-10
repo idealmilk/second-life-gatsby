@@ -3,14 +3,18 @@ import React from 'react';
 import MainLayout from 'layouts/MainLayout';
 import { PageHeader, SEO } from 'components';
 
-const NewsPage = () => {
+const PricingPage = () => {
   return (
     <MainLayout>
       <SEO />
 
-      <PageHeader title='FAQs' header='FAQs' />
+      <PageHeader
+        title='Pricing'
+        header='
+We have a completely different charging model.'
+      />
     </MainLayout>
   );
 };
 
-export default NewsPage;
+export default PricingPage;

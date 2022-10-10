@@ -3,7 +3,7 @@ import React from 'react';
 import MainLayout from 'layouts/MainLayout';
 import { PageHeader, SEO } from 'components';
 
-const NewsPage = () => {
+const BlogPage = () => {
   return (
     <MainLayout>
       <SEO />
@@ -13,4 +13,4 @@ const NewsPage = () => {
   );
 };
 
-export default NewsPage;
+export default BlogPage;

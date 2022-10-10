@@ -8,7 +8,11 @@ const AboutUsPage = () => {
     <MainLayout>
       <SEO />
 
-      <PageHeader title='About' header='About' />
+      <PageHeader
+        title='About'
+        header='
+Everyone can benefit from good financial planning...'
+      />
     </MainLayout>
   );
 };

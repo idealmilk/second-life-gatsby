@@ -2,12 +2,12 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: 'SciLeads',
+    title: 'Second Life',
     titleTemplate: '',
-    description: 'Increase Scientific Leads',
-    siteUrl: 'http://scileads.com',
+    description: 'Financial Planning',
+    siteUrl: 'http://secondlife.com',
     image: '/imgs/logo.png',
-    linkedIn: 'https://www.linkedin.com/company/scileads/mycompany',
+    linkedIn: 'https://www.linkedin.com/company/secondlife/mycompany',
   },
   proxy: [
     {
@@ -26,14 +26,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: 'https://scileads.com',
+        siteUrl: 'https://secondlife.com',
       },
     },
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'http://scileads.com',
-        sitemap: 'http://scileads.com/sitemap.xml',
+        host: 'http://secondlife.com',
+        sitemap: 'http://secondlife.com/sitemap.xml',
         policy: [
           {
             userAgent: '*',

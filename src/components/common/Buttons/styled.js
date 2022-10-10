@@ -7,10 +7,7 @@ export const Container = styled.button`
   font-weight: 400;
   color: #ffffff;
   letter-spacing: 1px;
-  background: ${(props) =>
-    props.color === 'orange'
-      ? props.theme.colors.orange
-      : props.theme.colors.gradientBlue};
+  background: ${(props) => props.theme.colors.orange};
   border-radius: 28px;
   padding: 14px 28px;
   line-height: 1.25;

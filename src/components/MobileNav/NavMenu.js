@@ -16,33 +16,18 @@ const variants = {
   },
 };
 
-const solutionsMenu = [
+const servicesMenu = [
   {
-    title: 'Sales',
-    slug: '/solutions/sales',
+    title: 'Financial planning',
+    slug: '/services/financial-planning',
   },
   {
-    title: 'Marketing',
-    slug: '/solutions/marketing',
+    title: 'Retirement planning',
+    slug: '/services/retirement-planning',
   },
   {
-    title: 'Startups',
-    slug: '/solutions/startups',
-  },
-];
-
-const resourcesMenu = [
-  {
-    title: 'News & Blog',
-    slug: '/news',
-  },
-  {
-    title: 'Partners',
-    slug: '/partner-program',
-  },
-  {
-    title: 'Referral',
-    slug: '/refer-a-friend-to-scileads',
+    title: 'Mentoring & coaching',
+    slug: '/services/mentoring-and-coaching',
   },
 ];
 
@@ -66,7 +51,34 @@ export function NavMenu({ isOpen }) {
             },
           }}
         >
-          <CollapsibleListItem parent='Solutions' children={solutionsMenu} />
+          <Link
+            to='/about-us'
+            style={{
+              color:
+                location.pathname === '/about-us'
+                  ? 'rgba(246, 95, 48, 1)'
+                  : 'black',
+            }}
+          >
+            About Us
+          </Link>
+        </NavLink>
+
+        <NavLink
+          initial={false}
+          animate={isOpen ? 'show' : 'hide'}
+          variants={{
+            show: {
+              ...variants.show,
+              transition: { delay: 0.5, duration: 0.2 },
+            },
+            hide: {
+              ...variants.hide,
+              transition: { delay: 0.15, duration: 0.05 },
+            },
+          }}
+        >
+          <CollapsibleListItem parent='Services' children={servicesMenu} />
         </NavLink>
 
         <NavLink
@@ -111,86 +123,15 @@ export function NavMenu({ isOpen }) {
           }}
         >
           <Link
-            to='/events'
+            to='/blog'
             style={{
               color:
-                location.pathname === '/events'
+                location.pathname === '/blog'
                   ? 'rgba(246, 95, 48, 1)'
                   : 'black',
             }}
           >
-            Events
-          </Link>
-        </NavLink>
-
-        <NavLink
-          initial={false}
-          animate={isOpen ? 'show' : 'hide'}
-          variants={{
-            show: {
-              ...variants.show,
-              transition: { delay: 0.5, duration: 0.2 },
-            },
-            hide: {
-              ...variants.hide,
-              transition: { delay: 0.15, duration: 0.05 },
-            },
-          }}
-        >
-          <Link
-            to='/about-us'
-            style={{
-              color:
-                location.pathname === '/about-us'
-                  ? 'rgba(246, 95, 48, 1)'
-                  : 'black',
-            }}
-          >
-            About Us
-          </Link>
-        </NavLink>
-
-        <NavLink
-          initial={false}
-          animate={isOpen ? 'show' : 'hide'}
-          variants={{
-            show: {
-              ...variants.show,
-              transition: { delay: 0.5, duration: 0.2 },
-            },
-            hide: {
-              ...variants.hide,
-              transition: { delay: 0.15, duration: 0.05 },
-            },
-          }}
-        >
-          <CollapsibleListItem parent='Resources' children={resourcesMenu} />
-        </NavLink>
-
-        <NavLink
-          initial={false}
-          animate={isOpen ? 'show' : 'hide'}
-          variants={{
-            show: {
-              ...variants.show,
-              transition: { delay: 0.5, duration: 0.2 },
-            },
-            hide: {
-              ...variants.hide,
-              transition: { delay: 0.15, duration: 0.05 },
-            },
-          }}
-        >
-          <Link
-            to='/careers'
-            style={{
-              color:
-                location.pathname === '/careers'
-                  ? 'rgba(246, 95, 48, 1)'
-                  : 'black',
-            }}
-          >
-            Careers
+            Blog
           </Link>
         </NavLink>
       </NavList>

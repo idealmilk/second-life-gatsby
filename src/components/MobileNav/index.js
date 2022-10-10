@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import Logo from 'assets/Logos/logo.svg';
+import { LogoWhite } from 'assets/Logos';
 
 import HamburgerMenu from './HamburgerMenu';
 import { NavbarContainer, NavbarLogo } from './styled';
@@ -11,10 +11,10 @@ const MobileNav = () => {
     <NavbarContainer>
       <NavbarLogo>
         <Link to='/'>
-          <img src={Logo} alt='SciLeads Logo' />
+          <img src={LogoWhite} alt='Second life' />
         </Link>
       </NavbarLogo>
-      <HamburgerMenu logo={Logo} />
+      <HamburgerMenu logo={LogoWhite} />
     </NavbarContainer>
   );
 };

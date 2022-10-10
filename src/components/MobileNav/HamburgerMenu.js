@@ -55,19 +55,13 @@ const HamburgerMenu = ({ logo }) => {
       >
         <LogoContainer>
           <Link to='/'>
-            <img src={logo} alt='SciLeads Logo' />
+            <img src={logo} alt='Second Life' />
           </Link>
         </LogoContainer>
 
         <ContentContainer>
           <NavMenu isOpen={isOpen} />
         </ContentContainer>
-
-        <BottomContainer>
-          <Button>
-            <a href='https://portal.scileads.com/'>Login</a>
-          </Button>
-        </BottomContainer>
       </MenuContainer>
     </HamburgerMenuContainer>
   );

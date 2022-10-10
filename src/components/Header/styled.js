@@ -60,8 +60,7 @@ export const NavItem = styled.div`
     display: block;
   }
 
-  .hide-solutions,
-  .hide-resources {
+  .hide-services {
     -webkit-animation: fadeinout 0.3s linear forwards;
     animation: fadeinout 0.3s linear forwards;
     visibility: hidden;
@@ -102,7 +101,7 @@ export const NavItem = styled.div`
   }
 
   .show-solutions,
-  .show-resources {
+  .show-services {
     -webkit-animation: display 0.5s linear forwards;
     animation: display 0.5s linear forwards;
     visibility: visible;
@@ -164,60 +163,7 @@ export const SubMenuList = styled.div`
   margin: 0 auto;
 `;
 
-export const SolutionsItemContainer = styled.div`
-  display: flex;
-  width: 420px;
-  padding: 40px 20px;
-  font-size: 15px;
-  line-height: 1.6;
-  color: rgb(129, 134, 140);
-  border: 1px solid rgb(231, 232, 233);
-  border-radius: 20px;
-  transition: background-color 0.5s ease-out;
-  p {
-    margin-left: 20px;
-  }
-  span {
-    font-size: 20px;
-    color: black;
-    margin-left: 0;
-    transform: none;
-  }
-  &:hover {
-    background-color: ${(props) => props.hoverColor};
-    p {
-      color: white;
-    }
-    span {
-      color: white;
-    }
-    img {
-      display: none;
-      &:last-of-type {
-        display: block;
-      }
-    }
-  }
-`;
-
-export const SolutionsImageWrap = styled.div`
-  display: flex;
-  flex-direction: column
-  height: 100%;
-  margin: auto 20px auto 0;
-
-  img {
-    min-height: 60px;
-    height: 60px;
-    min-width: 60px;
-    width: 60px;
-    &:last-of-type {
-      display: none;
-    }
-  }
-`;
-
-export const ResourcesItemContainer = styled.div`
+export const ServicesItemContainer = styled.div`
   display: flex;
   width: 420px;
   padding: 30px 20px;
@@ -242,7 +188,7 @@ export const ResourcesItemContainer = styled.div`
   }
 `;
 
-export const ResourcesImageWrap = styled.div`
+export const ServicesImageWrap = styled.div`
   display: flex;
   flex-direction: column
   height: 100%;

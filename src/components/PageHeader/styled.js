@@ -3,16 +3,19 @@ import styled from 'styled-components';
 import { ContactPageHeaderHero, PageHeaderHero } from 'assets/Layout';
 
 export const Container = styled.div`
-  display: ${(props) => (props.shownOnDesktop === false ? 'none' : 'block')};
-  padding: 210px 0 200px;
-  margin: 40px auto -180px;
-  background-image: ${(props) =>
-    props.isContact
-      ? `url(${ContactPageHeaderHero})`
-      : `url(${PageHeaderHero})`};
-  background-size: cover;
-  background-position: bottom;
-  transform: translateY(-180px);
+  position: relative;
+`;
+
+export const Circle = styled.div`
+  position: absolute;
+  top: -200rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 300vh;
+  height: 300vh;
+  background-color: ${(props) => props.theme.colors.blue};
+  border-radius: 50%;
+
   @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
     display: block;
     padding: 170px 0 120px;
@@ -20,10 +23,13 @@ export const Container = styled.div`
 `;
 
 export const InnerWrap = styled.div`
+  position: relative;
   width: 540px;
   max-width: 90%;
   margin: 0 auto;
+  z-index: 10;
   text-align: center;
+  color: white;
   h1 {
     margin: 0 0 30px;
   }
