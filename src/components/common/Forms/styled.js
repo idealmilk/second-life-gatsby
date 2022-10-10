@@ -32,3 +32,25 @@ export const TextAreaContainer = styled.div`
     width: 100%;
   }
 `;
+
+export const FormContainer = styled.div`
+  width: 100%;
+`;
+
+export const Form = styled.form`
+  display: flex;
+  background: #ffffff;
+  border-radius: 40px;
+  overflow: hidden;
+`;
+
+export const Button = styled.button`
+  width: 32rem;
+  font-size: 1.6rem;
+  border-radius: 40px;
+  background-color: ${(props) => props.theme.colors.orange};
+  color: white;
+  border: 0;
+  text-align: center;
+  cursor: pointer;
+`;

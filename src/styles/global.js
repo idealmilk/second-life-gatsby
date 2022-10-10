@@ -78,7 +78,7 @@ const GlobalStyles = styled.createGlobalStyle`
 
   p {
     color: ${(props) => props.theme.colors.black};
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1.7;
   }
 

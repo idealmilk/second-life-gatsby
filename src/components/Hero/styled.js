@@ -28,7 +28,11 @@ export const ContentWrap = styled.div`
   color: white;
   width: 60%;
   p {
-    margin-top: 1rem;
-    width: 90%;
+    margin: 1rem 0;
+    width: 75%;
   }
+`;
+
+export const FormWrap = styled.div`
+  width: 75%;
 `;

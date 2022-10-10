@@ -20,8 +20,8 @@ export const Container = styled.header`
 export const InnerWrap = styled.div`
   display: flex;
   justify-content: space-between;
-  max-width: 1400px;
-  width: 92%;
+  max-width: 1300px;
+  width: 90%;
   margin: 0 auto;
   padding: 30px 0;
 `;

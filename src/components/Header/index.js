@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import { IoIosArrowDown } from 'react-icons/io';
 
-import { Logo } from 'assets/Logos';
+import { LogoWhite } from 'assets/Logos';
 import { Button } from 'components/common/Buttons';
 
 import ServicesItem from './ServicesItem';
@@ -68,7 +68,7 @@ const Header = () => {
       <InnerWrap>
         <LogoWrap>
           <Link to='/'>
-            <img src={Logo} alt='Second Life' />
+            <img src={LogoWhite} alt='Second Life' />
           </Link>
         </LogoWrap>
 
