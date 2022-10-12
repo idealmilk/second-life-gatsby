@@ -15,3 +15,8 @@ export const Container = styled.div`
     max-width: 50rem;
   }
 `;
+
+export const ServicesWrap = styled.div`
+  display: flex;
+  margin-bottom: 3rem;
+`;

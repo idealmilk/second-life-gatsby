@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import MainLayout from 'layouts/MainLayout';
-import { Hero, SEO, Services } from 'components';
+import { Hero, SEO, Services, Video } from 'components';
 import { TextWrap } from 'components/common/Containers/styled';
 
 export const StyledTextWrap = styled(TextWrap)`
@@ -26,6 +26,7 @@ const IndexPage = () => {
       </StyledTextWrap>
 
       <Services />
+      <Video />
     </MainLayout>
   );
 };

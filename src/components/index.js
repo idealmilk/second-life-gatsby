@@ -5,3 +5,4 @@ export { default as MobileNav } from './MobileNav';
 export { default as PageHeader } from './PageHeader';
 export { default as SEO } from './SEO';
 export { default as Services } from './Services';
+export { default as Video } from './Video';
