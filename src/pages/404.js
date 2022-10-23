@@ -5,7 +5,7 @@ import MainLayout from 'layouts/MainLayout';
 import { PageHeader, SEO } from 'components';
 import { InnerWrap } from 'components/common/Containers/styled';
 
-const FourOhFour = () => {
+const FourOhFourPage = () => {
   return (
     <MainLayout cta={true}>
       <SEO title='Page not Found' />
@@ -20,4 +20,4 @@ const FourOhFour = () => {
   );
 };
 
-export default FourOhFour;
+export default FourOhFourPage;

@@ -3,32 +3,29 @@ import { FaCheck } from 'react-icons/fa';
 
 import { Container, StyledInnerWrap, FeaturesWrap, VideoWrap } from './styled';
 
-const Video = () => {
+const Video = ({ video, list }) => {
   return (
     <Container>
       <StyledInnerWrap>
         <VideoWrap>
           <iframe
-            src='https://www.youtube.com/embed/uIc2beTpKUU'
+            src={video}
             title='YouTube video player'
             frameborder='0'
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
             allowfullscreen
+            class='drop-shadow'
           ></iframe>
         </VideoWrap>
         <FeaturesWrap>
-          <p>
-            <FaCheck />
-            Fully transparent
-          </p>
-          <p>
-            <FaCheck />
-            Value for money
-          </p>
-          <p>
-            <FaCheck />
-            Evidence-based
-          </p>
+          {list.map((item) => {
+            return (
+              <p>
+                <FaCheck />
+                {item}
+              </p>
+            );
+          })}
         </FeaturesWrap>
       </StyledInnerWrap>
     </Container>

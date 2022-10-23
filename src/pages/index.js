@@ -1,34 +1,125 @@
 import React from 'react';
 import styled from 'styled-components';
+import { graphql } from 'gatsby';
 
 import MainLayout from 'layouts/MainLayout';
-import { Hero, SEO, Services, Video } from 'components';
-import { TextWrap } from 'components/common/Containers/styled';
+import { CaseStudies, Hero, RichText, SEO, Services, Video } from 'components';
+import {
+  TextWrap,
+  AboutFeatureWrap,
+} from 'components/common/Containers/styled';
 
 const StyledTextWrap = styled(TextWrap)`
   margin: -2rem auto 20rem;
 `;
 
-const IndexPage = () => {
+const HomePage = ({ data }) => {
+  const {
+    contentfulHome,
+    contentfulHero,
+    allContentfulService,
+    allContentfulCaseStudy,
+  } = data;
+
+  const {
+    featuresList,
+    founderSectionBody,
+    founderSectionHeader,
+    topSectionBody,
+    topSectionHeader,
+    videoEmbed,
+    founderSectionImage,
+  } = contentfulHome;
+
   return (
     <MainLayout>
       <SEO />
-      <Hero />
+      <Hero {...contentfulHero} />
 
       <StyledTextWrap>
-        <h2>Fully transparent. Value for money. Evidence-based.</h2>
-        <p>
-          We won’t sell you products or pretend we can predict the future. But
-          we will give you all the information and support you need to identify
-          and achieve your goals. And because you won’t be paying us to manage
-          your investments, you’ll save yourself a fortune in fees.
-        </p>
+        <h2>{topSectionHeader}</h2>
+        <RichText {...topSectionBody} />
       </StyledTextWrap>
 
-      <Services />
-      <Video />
+      <Services {...allContentfulService} />
+
+      <Video video={videoEmbed} list={featuresList} />
+
+      <CaseStudies {...allContentfulCaseStudy} />
+
+      <h2 style={{ textAlign: 'center', marginBottom: '8rem' }}>
+        {founderSectionHeader}
+      </h2>
+
+      <AboutFeatureWrap>
+        <RichText {...founderSectionBody} />
+        <img
+          src={founderSectionImage.file.url}
+          alt='Founder'
+          class='drop-shadow'
+        />
+      </AboutFeatureWrap>
     </MainLayout>
   );
 };
 
-export default IndexPage;
+export const query = graphql`
+  query {
+    contentfulHome {
+      featuresList
+      founderSectionBody {
+        raw
+      }
+      founderSectionHeader
+      topSectionBody {
+        raw
+      }
+      topSectionHeader
+      videoEmbed
+      founderSectionImage {
+        file {
+          url
+        }
+      }
+    }
+    contentfulHero {
+      header
+      subheader
+      backgroundImage {
+        file {
+          url
+        }
+      }
+    }
+    allContentfulService {
+      edges {
+        node {
+          title
+          slug
+          icon {
+            file {
+              url
+            }
+          }
+        }
+      }
+    }
+    allContentfulCaseStudy {
+      edges {
+        node {
+          title
+          slug
+          description
+          customerNames
+          customerImage {
+            file {
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+export default HomePage;

@@ -18,5 +18,34 @@ export const Container = styled.div`
 
 export const ServicesWrap = styled.div`
   display: flex;
-  margin-bottom: 3rem;
+  width: 100%;
+  justify-content: space-between;
+  margin: 4rem 0 1rem;
+`;
+
+export const Service = styled.div`
+  width: 30%;
+  text-align: center;
+  p {
+    font-family: 'Gotham Bold';
+    font-size: 2.6rem;
+    color: white;
+  }
+`;
+
+export const IconWrap = styled.div`
+  position: relative;
+  background-color: white;
+  width: 13rem;
+  height: 13rem;
+  border-radius: 50%;
+  margin: 0 auto;
+  text-align: center;
+  img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+  }
 `;

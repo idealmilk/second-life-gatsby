@@ -3,12 +3,13 @@ import { Link } from 'gatsby';
 import { FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 
 import { LogoWhite } from 'assets/Logos';
+import { EmailForm } from 'components/common/Forms';
 import { InnerWrap } from 'components/common/Containers/styled';
 
 import {
   Container,
-  FormWrap,
   Content,
+  FormWrap,
   Pages,
   PagesWrap,
   PageList,
@@ -23,7 +24,10 @@ const Footer = () => {
     <Container>
       <InnerWrap>
         <Content>
-          <FormWrap></FormWrap>
+          <FormWrap>
+            <h3>Plan your financial freedom</h3>
+            <EmailForm />
+          </FormWrap>
           <Pages>
             <PagesWrap>
               <PageList>
@@ -45,13 +49,15 @@ const Footer = () => {
               <PageList>
                 <PageItem>Case Studies</PageItem>
                 <PageItem>
-                  <Link to='/case-studies/'>Mid-to-late-30s</Link>
+                  <Link to='/case-studies/mid-to-late-30s'>
+                    Mid-to-late-30s
+                  </Link>
                 </PageItem>
                 <PageItem>
-                  <Link to='/case-studies'>Mid-50s</Link>
+                  <Link to='/case-studies/mid-50s'>Mid-50s</Link>
                 </PageItem>
                 <PageItem>
-                  <Link to='/case-studies'>Mid-60s</Link>
+                  <Link to='/case-studies/mid-60s'>Mid-60s</Link>
                 </PageItem>
               </PageList>
 

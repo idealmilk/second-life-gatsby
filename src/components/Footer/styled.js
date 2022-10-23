@@ -9,11 +9,12 @@ export const Container = styled.footer`
 `;
 
 export const FormWrap = styled.div`
-  padding: 40px;
-  border: solid 1px rgba(39, 48, 56, 1);
-  border-radius: 8px;
-  @media (max-width: ${(props) => props.theme.breakpoints.tabletLan}) {
-    display: none;
+  width: 45%;
+  margin-bottom: 10rem;
+  h3 {
+    width: 48%;
+    color: white;
+    margin-bottom: 2rem;
   }
 `;
 

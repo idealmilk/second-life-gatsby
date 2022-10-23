@@ -4,17 +4,13 @@ import { EmailForm } from 'components/common/Forms';
 
 import { Container, InnerWrapStyled, ContentWrap, FormWrap } from './styled';
 
-const Hero = () => {
+const Hero = ({ header, subheader }) => {
   return (
     <Container>
       <InnerWrapStyled>
         <ContentWrap>
-          <h1>Plan for your financial freedom</h1>
-          <p>
-            Comprehensive financial and retirement planning, plus ongoing
-            guidance and coaching, from highly qualified and experienced
-            professionals
-          </p>
+          <h1>{header}</h1>
+          <p>{subheader}</p>
           <FormWrap>
             <EmailForm />
           </FormWrap>

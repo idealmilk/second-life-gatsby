@@ -32,6 +32,11 @@ export const LogoWrap = styled.div`
     width: 170px;
     margin-right: 60px;
   }
+  .black-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 `;
 
 export const NavList = styled.div`

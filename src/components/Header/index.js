@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import { IoIosArrowDown } from 'react-icons/io';
 
-import { LogoWhite } from 'assets/Logos';
+import { Logo, LogoWhite } from 'assets/Logos';
 import { Button } from 'components/common/Buttons';
 
 import ServicesItem from './ServicesItem';
@@ -21,6 +21,10 @@ import {
 const Header = () => {
   const [activeNavItem, setActiveNavItem] = useState('');
   const [navBar, setNavBar] = useState(false);
+  const [whiteLogoOpacity, setWhiteLogoOpacity] = useState(1);
+  const [blackLogoOpacity, setBlackLogoOpacity] = useState(10);
+  const [itemColor, setItemColor] = useState('white');
+  const [servicesItemColor, setServicesItemColor] = useState('white');
 
   let servicesActive = activeNavItem === 'Services';
 
@@ -48,8 +52,14 @@ const Header = () => {
   const changeNavBar = () => {
     if (window.scrollY >= 200) {
       setNavBar(true);
+      setWhiteLogoOpacity(0);
+      setBlackLogoOpacity(1);
+      setServicesItemColor('black');
     } else {
       setNavBar(false);
+      setWhiteLogoOpacity(1);
+      setBlackLogoOpacity(0);
+      setServicesItemColor('white');
     }
   };
 
@@ -57,6 +67,16 @@ const Header = () => {
     changeNavBar();
     window.addEventListener('scroll', changeNavBar);
   });
+
+  useEffect(() => {
+    if (servicesActive) {
+      setItemColor('black');
+      setServicesItemColor('rgb(246,95,48)');
+    } else {
+      setItemColor('white');
+      setServicesItemColor('black');
+    }
+  }, [servicesActive]);
 
   return (
     <Container
@@ -68,7 +88,19 @@ const Header = () => {
       <InnerWrap>
         <LogoWrap>
           <Link to='/'>
-            <img src={LogoWhite} alt='Second Life' />
+            <img
+              src={LogoWhite}
+              alt='Second Life'
+              style={{ opacity: whiteLogoOpacity }}
+            />
+          </Link>
+          <Link to='/'>
+            <img
+              src={Logo}
+              alt='Second Life'
+              style={{ opacity: blackLogoOpacity }}
+              class='black-logo'
+            />
           </Link>
         </LogoWrap>
 
@@ -80,7 +112,7 @@ const Header = () => {
             <Link
               to='/about'
               style={{
-                color: activeNavItem === 'About' ? 'rgb(246,95,48)' : 'white',
+                color: activeNavItem === 'About' ? 'rgb(246,95,48)' : itemColor,
               }}
             >
               About
@@ -89,7 +121,7 @@ const Header = () => {
 
           <NavItem
             style={{
-              color: activeNavItem === 'Services' ? 'rgb(246,95,48)' : 'white',
+              color: servicesItemColor,
             }}
             onMouseEnter={() => setActiveNavItem('Services')}
             onMouseLeave={() => setActiveNavItem('')}
@@ -116,7 +148,8 @@ const Header = () => {
             <Link
               to='/pricing'
               style={{
-                color: activeNavItem === 'Pricing' ? 'rgb(246,95,48)' : 'white',
+                color:
+                  activeNavItem === 'Pricing' ? 'rgb(246,95,48)' : itemColor,
               }}
             >
               Pricing
@@ -130,7 +163,7 @@ const Header = () => {
             <Link
               to='/blog'
               style={{
-                color: activeNavItem === 'Blog' ? 'rgb(246,95,48)' : 'white',
+                color: activeNavItem === 'Blog' ? 'rgb(246,95,48)' : itemColor,
               }}
             >
               Blog

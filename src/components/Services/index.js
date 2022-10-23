@@ -1,25 +1,12 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
 import { TightInnerWrap } from 'components/common/Containers/styled';
 import { Button } from 'components/common/Buttons';
 
-import { Container, ServicesWrap } from './styled';
+import { Container, ServicesWrap, Service, IconWrap } from './styled';
 
-const Services = () => {
-  const services = [
-    {
-      title: 'Financial planning',
-      // image:
-    },
-    {
-      title: 'Retirement planning',
-      // image:
-    },
-    {
-      title: 'Coaching and mentoring',
-      // image:
-    },
-  ];
+const Services = ({ edges }) => {
   return (
     <Container>
       <TightInnerWrap>
@@ -29,8 +16,20 @@ const Services = () => {
           finances and plan for their financial freedom
         </p>
         <ServicesWrap>
-          {services.map((service) => {
-            return <p>{service.title}</p>;
+          {Object.values(edges).map((service) => {
+            return (
+              <Service>
+                <Link to={`/services/${service.node.slug}`}>
+                  <IconWrap>
+                    <img
+                      src={service.node.icon.file.url}
+                      alt={service.node.title}
+                    />
+                  </IconWrap>
+                  <p>{service.node.title}</p>;
+                </Link>
+              </Service>
+            );
           })}
         </ServicesWrap>
         <Button>View Services</Button>

@@ -10,6 +10,8 @@ const Theme = {
     blue: '#4A6682',
     orange: '#F15A24',
     navy: '#232527',
+    sand: '#F0DEC9',
+    green: '#A8C7C4',
   },
 };
 

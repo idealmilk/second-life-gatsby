@@ -76,10 +76,21 @@ const GlobalStyles = styled.createGlobalStyle`
     color: ${(props) => props.theme.colors.gray};
   }
 
-  p {
+  p,
+  i,
+  a,
+  b {
     color: ${(props) => props.theme.colors.black};
     font-size: 1.8rem;
     line-height: 1.7;
+  }
+
+  i {
+    font-style: italic;
+  }
+
+  b {
+    font-family: 'Gotham Bold';
   }
 
   span {
@@ -88,7 +99,6 @@ const GlobalStyles = styled.createGlobalStyle`
 
   a {
     color: black;
-    font-size: 1.6rem;
     cursor: pointer;
     text-decoration: none;
   }
@@ -110,6 +120,10 @@ const GlobalStyles = styled.createGlobalStyle`
 
   img {
     max-width: 100%;
+  }
+
+  .drop-shadow {
+    box-shadow: 12px 12px 0px 2px rgba(72, 102, 130, 1);
   }
 
   img.badge {
