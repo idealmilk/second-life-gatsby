@@ -5,7 +5,7 @@ import MainLayout from 'layouts/MainLayout';
 import { Hero, SEO, Services, Video } from 'components';
 import { TextWrap } from 'components/common/Containers/styled';
 
-export const StyledTextWrap = styled(TextWrap)`
+const StyledTextWrap = styled(TextWrap)`
   margin: -2rem auto 20rem;
 `;
 

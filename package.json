@@ -28,6 +28,7 @@
     "gatsby-plugin-sharp": "^4.11.1",
     "gatsby-plugin-sitemap": "^5.12.1",
     "gatsby-plugin-styled-components": "^5.12.1",
+    "gatsby-source-contentful": "^7.22.0",
     "gatsby-transformer-sharp": "^4.12.1",
     "postcss": "^8.4.12",
     "preact": "^10.7.1",
