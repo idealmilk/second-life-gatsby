@@ -16,8 +16,12 @@ export const Container = styled.button`
   text-decoration: none;
   text-align: center;
   cursor: pointer;
+  transition: opacity 0.5s ease-out;
   a {
     color: white;
     font-size: 1.5rem;
+  }
+  &:hover {
+    opacity: 0.9;
   }
 `;

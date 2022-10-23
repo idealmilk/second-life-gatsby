@@ -19,3 +19,67 @@ export const TextWrap = styled.div`
     margin-bottom: 2rem;
   }
 `;
+
+export const QuoteWrap = styled.div`
+  width: 100%;
+  margin: 6rem 0;
+  padding: 3rem 0;
+  background-color: ${(props) =>
+    props.color === 'sand'
+      ? props.theme.colors.sand
+      : props.theme.colors.green};
+  p {
+    width: 84rem;
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Gotham Bold';
+    font-size: 3rem;
+    font-style: italic;
+  }
+`;
+
+export const BodyWrap = styled.div`
+  width: 66rem;
+  max-width: 90%;
+  margin: 0 auto;
+  &:last-of-type {
+    margin-bottom: 8rem;
+  }
+  h3 {
+    margin: 3rem 0 1rem;
+  }
+`;
+
+export const AboutFeatureWrap = styled(InnerWrap)`
+  display: flex;
+  justify-content: space-between;
+  width: 1100px;
+  max-width: 90%;
+  margin-bottom: 8rem;
+  img {
+    width: 40%;
+    border-radius: 2.5rem;
+    object-fit: cover;
+  }
+  div {
+    width: 50%;
+  }
+
+  &:nth-of-type(2) {
+    div:first-of-type {
+      order: 2;
+    }
+    div:last-of-type {
+      order: 1;
+    }
+  }
+  &:nth-of-type(3) {
+    div:first-of-type {
+      order: 1;
+    }
+    div:last-of-type {
+      order: 2;
+    }
+  }
+`;
