@@ -56,7 +56,7 @@ export const FeatureWrap = styled(InnerWrap)`
   justify-content: space-between;
   width: 1100px;
   max-width: 90%;
-  margin-bottom: 8rem;
+  margin-bottom: 12rem;
   img {
     width: 40%;
     border-radius: 2.5rem;
