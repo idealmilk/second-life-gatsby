@@ -3,11 +3,16 @@ import styled from 'styled-components';
 import { graphql } from 'gatsby';
 
 import MainLayout from 'layouts/MainLayout';
-import { CaseStudies, Hero, RichText, SEO, Services, Video } from 'components';
 import {
-  TextWrap,
-  AboutFeatureWrap,
-} from 'components/common/Containers/styled';
+  CaseStudies,
+  Hero,
+  Publications,
+  RichText,
+  SEO,
+  Services,
+  Video,
+} from 'components';
+import { TextWrap, FeatureWrap } from 'components/common/Containers/styled';
 
 const StyledTextWrap = styled(TextWrap)`
   margin: -2rem auto 20rem;
@@ -19,6 +24,7 @@ const HomePage = ({ data }) => {
     contentfulHero,
     allContentfulService,
     allContentfulCaseStudy,
+    allContentfulPublication,
   } = data;
 
   const {
@@ -47,18 +53,22 @@ const HomePage = ({ data }) => {
 
       <CaseStudies {...allContentfulCaseStudy} />
 
-      <h2 style={{ textAlign: 'center', marginBottom: '8rem' }}>
+      <h2
+        style={{ textAlign: 'center', margin: '0 auto 8rem', width: '42rem' }}
+      >
         {founderSectionHeader}
       </h2>
 
-      <AboutFeatureWrap>
+      <FeatureWrap>
         <RichText {...founderSectionBody} />
         <img
           src={founderSectionImage.file.url}
           alt='Founder'
           class='drop-shadow'
         />
-      </AboutFeatureWrap>
+      </FeatureWrap>
+
+      <Publications {...allContentfulPublication} />
     </MainLayout>
   );
 };
@@ -112,6 +122,17 @@ export const query = graphql`
           description
           customerNames
           customerImage {
+            file {
+              url
+            }
+          }
+        }
+      }
+    }
+    allContentfulPublication {
+      edges {
+        node {
+          logo {
             file {
               url
             }

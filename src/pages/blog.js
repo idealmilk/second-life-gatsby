@@ -8,7 +8,7 @@ const BlogPage = () => {
     <MainLayout>
       <SEO />
 
-      <PageHeader title='Blog' header='Blog' />
+      <PageHeader title='Blog' header='Read our blog' />
     </MainLayout>
   );
 };

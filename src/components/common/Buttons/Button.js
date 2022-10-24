@@ -2,9 +2,9 @@ import React from 'react';
 
 import { Container } from './styled';
 
-const Button = ({ color, onClick, children }) => {
+const Button = ({ onClick, children, hollow }) => {
   return (
-    <Container color={color} onClick={onClick}>
+    <Container hollow={hollow} onClick={onClick}>
       {children ? children : 'Get in touch'}
     </Container>
   );

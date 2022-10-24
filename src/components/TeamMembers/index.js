@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { RichText } from 'components';
-import { AboutFeatureWrap } from 'components/common/Containers/styled';
+import { FeatureWrap } from 'components/common/Containers/styled';
 
 import { Container, TextWrap } from './styled';
 
@@ -11,7 +11,7 @@ const TeamMembers = ({ edges }) => {
       <h2>Our team</h2>
       {Object.values(edges.reverse()).map((edge, index) => {
         return (
-          <AboutFeatureWrap pos={index}>
+          <FeatureWrap pos={index}>
             <TextWrap>
               <p class='name'>{edge.node.name}</p>
               <p class='job-title'>{edge.node.jobTitle}</p>
@@ -23,7 +23,7 @@ const TeamMembers = ({ edges }) => {
               class='drop-shadow'
               alt='Feature'
             />
-          </AboutFeatureWrap>
+          </FeatureWrap>
         );
       })}
     </Container>

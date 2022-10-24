@@ -51,7 +51,7 @@ export const BodyWrap = styled.div`
   }
 `;
 
-export const AboutFeatureWrap = styled(InnerWrap)`
+export const FeatureWrap = styled(InnerWrap)`
   display: flex;
   justify-content: space-between;
   width: 1100px;

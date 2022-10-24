@@ -10,7 +10,7 @@ import {
   Testimonials,
 } from 'components';
 
-import { AboutFeatureWrap } from 'components/common/Containers/styled';
+import { FeatureWrap } from 'components/common/Containers/styled';
 
 const AboutPage = ({ data }) => {
   const {
@@ -44,7 +44,7 @@ const AboutPage = ({ data }) => {
       {features.map((feature, index) => {
         console.log(feature.image.file.url);
         return (
-          <AboutFeatureWrap pos={index}>
+          <FeatureWrap pos={index}>
             <RichText {...feature.body} />
             <img
               src={feature.image.file.url}
@@ -53,7 +53,7 @@ const AboutPage = ({ data }) => {
                 feature.image.file.url.includes('WebIcons') ? '' : 'drop-shadow'
               }
             />
-          </AboutFeatureWrap>
+          </FeatureWrap>
         );
       })}
 
