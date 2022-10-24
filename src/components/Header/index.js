@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
-import { IoIosArrowDown } from 'react-icons/io';
 
 import { Logo, LogoWhite } from 'assets/Logos';
 import { Button } from 'components/common/Buttons';
-
-import ServicesItem from './ServicesItem';
 
 import {
   Container,
@@ -14,8 +11,6 @@ import {
   NavList,
   NavItem,
   ButtonWrap,
-  SubMenuContainer,
-  SubMenuList,
 } from './styled';
 
 const Header = () => {
@@ -23,43 +18,16 @@ const Header = () => {
   const [navBar, setNavBar] = useState(false);
   const [whiteLogoOpacity, setWhiteLogoOpacity] = useState(1);
   const [blackLogoOpacity, setBlackLogoOpacity] = useState(10);
-  const [itemColor, setItemColor] = useState('white');
-  const [servicesItemColor, setServicesItemColor] = useState('white');
-
-  let servicesActive = activeNavItem === 'Services';
-
-  const services = [
-    {
-      title: 'Financial Planning',
-      subtitle: 'Everyone should have a financial plan',
-      // image: News,
-      slug: '/services/financial-planning',
-    },
-    {
-      title: 'Retirement Planning',
-      subtitle: 'Leaving paid employment is a major life change',
-      // image: Partners,
-      slug: '/services/retirement-planning',
-    },
-    {
-      title: 'Coaching & mentoring',
-      subtitle: 'Wealth management made easy',
-      // image: Referral,
-      slug: '/services/coaching-and-mentoring',
-    },
-  ];
 
   const changeNavBar = () => {
     if (window.scrollY >= 200) {
       setNavBar(true);
       setWhiteLogoOpacity(0);
       setBlackLogoOpacity(1);
-      setServicesItemColor('black');
     } else {
       setNavBar(false);
       setWhiteLogoOpacity(1);
       setBlackLogoOpacity(0);
-      setServicesItemColor('white');
     }
   };
 
@@ -68,23 +36,8 @@ const Header = () => {
     window.addEventListener('scroll', changeNavBar);
   });
 
-  useEffect(() => {
-    if (servicesActive) {
-      setItemColor('black');
-      setServicesItemColor('rgb(246,95,48)');
-    } else {
-      setItemColor('white');
-      setServicesItemColor('black');
-    }
-  }, [servicesActive]);
-
   return (
-    <Container
-      className={navBar && 'active'}
-      style={{
-        backgroundColor: servicesActive ? 'white' : 'transparent',
-      }}
-    >
+    <Container className={navBar && 'active'}>
       <InnerWrap>
         <LogoWrap>
           <Link to='/'>
@@ -112,7 +65,7 @@ const Header = () => {
             <Link
               to='/about'
               style={{
-                color: activeNavItem === 'About' ? 'rgb(246,95,48)' : itemColor,
+                color: activeNavItem === 'About' ? 'rgb(246,95,48)' : 'white',
               }}
             >
               About
@@ -120,25 +73,18 @@ const Header = () => {
           </NavItem>
 
           <NavItem
-            style={{
-              color: servicesItemColor,
-            }}
             onMouseEnter={() => setActiveNavItem('Services')}
             onMouseLeave={() => setActiveNavItem('')}
           >
-            Services
-            <span>
-              <IoIosArrowDown />
-            </span>
-            <SubMenuContainer
-              className={servicesActive ? 'show-services' : 'hide-services'}
+            <Link
+              to='/services'
+              style={{
+                color:
+                  activeNavItem === 'Services' ? 'rgb(246,95,48)' : 'white',
+              }}
             >
-              <SubMenuList>
-                {services.map((item, pos) => {
-                  return <ServicesItem {...item} key={pos} services={true} />;
-                })}
-              </SubMenuList>
-            </SubMenuContainer>
+              Services
+            </Link>
           </NavItem>
 
           <NavItem
@@ -148,8 +94,7 @@ const Header = () => {
             <Link
               to='/pricing'
               style={{
-                color:
-                  activeNavItem === 'Pricing' ? 'rgb(246,95,48)' : itemColor,
+                color: activeNavItem === 'Pricing' ? 'rgb(246,95,48)' : 'white',
               }}
             >
               Pricing
@@ -163,16 +108,16 @@ const Header = () => {
             <Link
               to='/blog'
               style={{
-                color: activeNavItem === 'Blog' ? 'rgb(246,95,48)' : itemColor,
+                color: activeNavItem === 'Blog' ? 'rgb(246,95,48)' : 'white',
               }}
             >
               Blog
             </Link>
           </NavItem>
+          <ButtonWrap>
+            <Button color='blue'>Book consultation</Button>
+          </ButtonWrap>
         </NavList>
-        <ButtonWrap>
-          <Button color='blue'>Book consultation</Button>
-        </ButtonWrap>
       </InnerWrap>
     </Container>
   );
