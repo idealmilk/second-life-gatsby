@@ -65,10 +65,7 @@ export const FeatureWrap = styled(InnerWrap)`
   div {
     width: 50%;
   }
-  /* div:first-of-type {
-    order: ${(props) => (props.reverse === 1 ? 2 : 1)} !important;
-  } */
   div:last-of-type {
-    order: ${(props) => (props.reverse === 1 ? 1 : 2)} !important;
+    order: ${(props) => (props.reverse !== 1 ? -1 : 2)};
   }
 `;

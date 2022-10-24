@@ -11,7 +11,7 @@ const TeamMembers = ({ edges }) => {
       <h2>Our team</h2>
       {Object.values(edges.reverse()).map((edge, index) => {
         return (
-          <FeatureWrap pos={index}>
+          <FeatureWrap pos={index} reverse={index}>
             <TextWrap>
               <p class='name'>{edge.node.name}</p>
               <p class='job-title'>{edge.node.jobTitle}</p>

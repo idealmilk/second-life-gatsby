@@ -7,9 +7,9 @@ import { Button, ContactButton } from 'components/common/Buttons';
 
 import { TextWrap, TitleWrap, ButtonWrap } from './styled';
 
-const Publications = ({ node, callbackFunction }) => {
+const Publications = ({ node, callbackFunction, reverse }) => {
   return (
-    <FeatureWrap>
+    <FeatureWrap reverse={reverse}>
       <TextWrap>
         <Link to={`/services/${node.slug}`}>
           <TitleWrap>

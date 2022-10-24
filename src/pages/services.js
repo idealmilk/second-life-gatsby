@@ -21,7 +21,12 @@ const ServicesPage = ({ data }) => {
       {Object.values(edges).map((service, index) => {
         console.log(service);
         return (
-          <ServicePreview {...service} callbackFunction={handleModalOpen} />
+          <ServicePreview
+            {...service}
+            callbackFunction={handleModalOpen}
+            key={index}
+            reverse={index}
+          />
         );
       })}
     </MainLayout>

@@ -10,10 +10,10 @@ export const TitleWrap = styled.div`
   display: flex;
   margin-bottom: 2rem;
   img {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 0;
-    margin: -0.3rem 2rem 0 0;
+    width: 4rem !important;
+    height: 4rem !important;
+    border-radius: 0 !important;
+    margin: -0.3rem 2rem 0 0 !important;
   }
 `;
 
