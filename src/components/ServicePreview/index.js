@@ -11,16 +11,18 @@ const Publications = ({ node, callbackFunction }) => {
   return (
     <FeatureWrap>
       <TextWrap>
-        <TitleWrap>
-          <img src={node.icon.file.url} alt='Service Icon' />
-          <h3>{node.title}</h3>
-        </TitleWrap>
+        <Link to={`/services/${node.slug}`}>
+          <TitleWrap>
+            <img src={node.icon.file.url} alt='Service Icon' />
+            <h3>{node.title}</h3>
+          </TitleWrap>
+        </Link>
         <RichText {...node.description} />
 
         <ButtonWrap>
-          <Button hollow={true}>
-            <Link to={`/services/${node.slug}`}>Read More</Link>
-          </Button>
+          <Link to={`/services/${node.slug}`}>
+            <Button hollow={true}>Read More</Button>
+          </Link>
           <Button onClick={callbackFunction}>Book Consultation</Button>
         </ButtonWrap>
       </TextWrap>

@@ -42,9 +42,9 @@ const AboutPage = ({ data }) => {
       <PageHeader title={title} header={header} />
 
       {features.map((feature, index) => {
-        console.log(feature.image.file.url);
+        console.log(index);
         return (
-          <FeatureWrap pos={index}>
+          <FeatureWrap pos={index} reverse={index}>
             <RichText {...feature.body} />
             <img
               src={feature.image.file.url}

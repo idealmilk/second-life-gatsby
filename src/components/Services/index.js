@@ -26,7 +26,7 @@ const Services = ({ edges }) => {
                       alt={service.node.title}
                     />
                   </IconWrap>
-                  <p>{service.node.title}</p>;
+                  <p>{service.node.title}</p>
                 </Link>
               </Service>
             );
