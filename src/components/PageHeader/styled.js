@@ -12,11 +12,19 @@ export const Circle = styled.div`
   transform: translate(-50%, 0);
   width: 300vh;
   height: 300vh;
-  background-image: ${(props) => `url(${props.backgroundImage})`};
   background-color: ${(props) => props.theme.colors.blue};
-  background-position: 50% 0;
-  background-size: cover;
   border-radius: 50%;
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+    display: block;
+    padding: 170px 0 120px;
+  }
+`;
+
+export const ImageOverlay = styled(Circle)`
+  background-image: ${(props) => `url(${props.backgroundImage})`};
+  background-position: 130% 0;
+  background-size: contain;
+  opacity: 14%;
   @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
     display: block;
     padding: 170px 0 120px;

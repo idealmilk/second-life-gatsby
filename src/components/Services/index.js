@@ -32,7 +32,9 @@ const Services = ({ edges }) => {
             );
           })}
         </ServicesWrap>
-        <Button>View Services</Button>
+        <Button>
+          <Link to='/services'>View Services</Link>
+        </Button>
       </TightInnerWrap>
       {}
     </Container>

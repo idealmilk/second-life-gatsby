@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import { Container, Circle, InnerWrap } from './styled';
+import { Container, Circle, ImageOverlay, InnerWrap } from './styled';
 
 const PageHeader = ({ title, header, image }) => {
   const { backgroundImage } = useStaticQuery(query).contentfulHero;
@@ -9,7 +9,8 @@ const PageHeader = ({ title, header, image }) => {
   console.log(backgroundImage);
   return (
     <Container>
-      <Circle backgroundImage={backgroundImage.file.url} />
+      <Circle />
+      <ImageOverlay backgroundImage={backgroundImage.file.url} />
       <InnerWrap>
         <h4>{title}</h4>
         <h1>{header}</h1>
