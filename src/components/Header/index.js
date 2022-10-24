@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 
 import { Logo, LogoWhite } from 'assets/Logos';
-import { Button } from 'components/common/Buttons';
+import { ContactButton } from 'components/common/Buttons';
 
 import {
   Container,
@@ -115,7 +115,7 @@ const Header = () => {
             </Link>
           </NavItem>
           <ButtonWrap>
-            <Button color='blue'>Book consultation</Button>
+            <ContactButton>Book consultation</ContactButton>
           </ButtonWrap>
         </NavList>
       </InnerWrap>

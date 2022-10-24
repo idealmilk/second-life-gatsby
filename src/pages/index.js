@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
 
@@ -27,6 +27,13 @@ const HomePage = ({ data }) => {
     allContentfulPublication,
   } = data;
 
+  const [email, setEmail] = useState('');
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleModalOpen = () => {
+    setModalOpen(!modalOpen);
+  };
+
   const {
     featuresList,
     founderSectionBody,
@@ -38,9 +45,17 @@ const HomePage = ({ data }) => {
   } = contentfulHome;
 
   return (
-    <MainLayout>
+    <MainLayout
+      parentCallback={handleModalOpen}
+      modalOpen={modalOpen}
+      email={email}
+    >
       <SEO />
-      <Hero {...contentfulHero} />
+      <Hero
+        {...contentfulHero}
+        setEmailCallback={setEmail}
+        toggleModalOpen={handleModalOpen}
+      />
 
       <StyledTextWrap>
         <h2>{topSectionHeader}</h2>

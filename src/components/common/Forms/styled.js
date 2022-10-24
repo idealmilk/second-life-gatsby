@@ -1,5 +1,36 @@
 import styled from 'styled-components';
 
+export const Container = styled.form`
+  min-height: 160px;
+  text-align: center;
+`;
+
+export const FormWrap = styled.div`
+  transition: all 0.5s ease;
+`;
+
+export const InputWrap = styled.div`
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+    display: block !important;
+  }
+`;
+
+export const InputRow = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletLan}) {
+    display: block;
+  }
+`;
+
+export const FormResponse = styled.div`
+  width: 100%;
+  color: #969ca0;
+  text-align: center;
+  transition: all 0.5s ease-in;
+`;
+
 export const InputContainer = styled.div`
   width: ${(props) => (props.isColumn ? 'calc(50% - 14px)' : '100%')};
   margin-bottom: ${(props) => (props.isEmail ? '0' : '28px')};

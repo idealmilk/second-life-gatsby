@@ -4,7 +4,7 @@ import { EmailForm } from 'components/common/Forms';
 
 import { Container, InnerWrapStyled, ContentWrap, FormWrap } from './styled';
 
-const Hero = ({ header, subheader }) => {
+const Hero = ({ header, subheader, setEmailCallback, toggleModalOpen }) => {
   return (
     <Container>
       <InnerWrapStyled>
@@ -12,7 +12,10 @@ const Hero = ({ header, subheader }) => {
           <h1>{header}</h1>
           <p>{subheader}</p>
           <FormWrap>
-            <EmailForm />
+            <EmailForm
+              setEmailCallback={setEmailCallback}
+              toggleModalOpen={toggleModalOpen}
+            />
           </FormWrap>
         </ContentWrap>
       </InnerWrapStyled>

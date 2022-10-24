@@ -3,11 +3,11 @@ import { Link } from 'gatsby';
 
 import { RichText } from 'components';
 import { FeatureWrap } from 'components/common/Containers/styled';
-import { Button } from 'components/common/Buttons';
+import { Button, ContactButton } from 'components/common/Buttons';
 
 import { TextWrap, TitleWrap, ButtonWrap } from './styled';
 
-const Publications = ({ node }) => {
+const Publications = ({ node, callbackFunction }) => {
   return (
     <FeatureWrap>
       <TextWrap>
@@ -21,7 +21,7 @@ const Publications = ({ node }) => {
           <Button hollow={true}>
             <Link to={`/services/${node.slug}`}>Read More</Link>
           </Button>
-          <Button>Book Consultation</Button>
+          <Button onClick={callbackFunction}>Book Consultation</Button>
         </ButtonWrap>
       </TextWrap>
       <img

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 
 import MainLayout from 'layouts/MainLayout';
@@ -6,17 +6,23 @@ import { PageHeader, SEO, ServicePreview } from 'components';
 
 const ServicesPage = ({ data }) => {
   const { edges } = data.allContentfulService;
-  console.log(edges);
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleModalOpen = () => {
+    setModalOpen(!modalOpen);
+  };
 
   return (
-    <MainLayout>
+    <MainLayout modalOpen={modalOpen} parentCallback={handleModalOpen}>
       <SEO />
 
       <PageHeader title='Services' header='Services for all stages of life' />
 
       {Object.values(edges).map((service, index) => {
         console.log(service);
-        return <ServicePreview {...service} />;
+        return (
+          <ServicePreview {...service} callbackFunction={handleModalOpen} />
+        );
       })}
     </MainLayout>
   );
