@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 import { Button } from 'components/common/Buttons';
 import { FormInput } from 'components/common/Forms';
@@ -11,58 +12,53 @@ import {
   FormResponse,
 } from './styled';
 
-const ContactForm = ({ endpoint, givenEmail }) => {
+const ContactForm = ({ givenEmail, contactType, clickOrigin }) => {
+  const form = useRef();
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [number, setNumber] = useState('');
-  const [sent, setSent] = useState(false);
   const [responseMessage, setResponseMessage] = useState('');
 
   if (givenEmail) {
     setEmail(givenEmail);
   }
 
-  const handleFormSubmit = (e) => {
+  console.log(contactType);
+  console.log(clickOrigin);
+
+  const sendEmail = (e) => {
     e.preventDefault();
-
-    let enquiryData = {
-      subject: 'New Partner Program Enquiry',
-      name: `${firstName} ${lastName}`,
-      email: email,
-      number: number,
-      sendEmail: false,
-    };
-
-    const options = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(enquiryData),
-    };
-
-    fetch(`/api/${endpoint}`, options).then((response) =>
-      setResponseMessage(
-        response.status === 200
-          ? 'Thank you for your enquiry. Our team will be in touch shortly.'
-          : 'We could not send your enquiry.  Please try again.'
+    emailjs
+      .sendForm(
+        process.env.GATSBY_EMAILJS_SERVICE_ID,
+        process.env.GATSBY_EMAILJS_TEMPLATE_ID,
+        form.current,
+        process.env.GATSBY_EMAILJS_PUBLIC_KEY
       )
-    );
-
-    setSent(true);
-    setFirstName('');
-    setLastName('');
-    setEmail('');
-    setNumber('');
+      .then(
+        (result) => {
+          console.log(result.text);
+          setResponseMessage('Your interest has been successfully registered');
+          e.target.reset();
+        },
+        (error) => {
+          console.log(error.text);
+          setResponseMessage(
+            'We could not complete your request, please try again later'
+          );
+        }
+      );
   };
 
   return (
-    <Container onSubmit={handleFormSubmit}>
-      <FormWrap style={{ display: sent ? 'none' : 'block' }}>
+    <Container ref={form} onSubmit={sendEmail}>
+      <FormWrap>
         <InputWrap>
           <InputRow>
             <FormInput
               type='text'
-              name='name'
+              name='first_name'
               required
               value={firstName}
               placeholder='First name'
@@ -73,7 +69,7 @@ const ContactForm = ({ endpoint, givenEmail }) => {
 
             <FormInput
               type='text'
-              name='name'
+              name='last_name'
               required
               value={lastName}
               placeholder='Last name'
@@ -88,7 +84,7 @@ const ContactForm = ({ endpoint, givenEmail }) => {
               required
               name='email'
               value={email}
-              placeholder='Email Address'
+              placeholder='Email address'
               isColumn={true}
               color='blue'
               handleChange={(e) => setEmail(e.target.value)}
@@ -99,7 +95,7 @@ const ContactForm = ({ endpoint, givenEmail }) => {
               name='number'
               required
               value={number}
-              placeholder='Phone Number'
+              placeholder='Phone number'
               style={{ marginBottom: '20px' }}
               isColumn={true}
               color='blue'
@@ -108,11 +104,15 @@ const ContactForm = ({ endpoint, givenEmail }) => {
           </InputRow>
         </InputWrap>
 
-        <Button type='submit' color='orange' size='large'>
-          Submit Enquiry
+        <input type='hidden' name='contact_type' defaultValue={contactType} />
+
+        <input type='hidden' name='click_origin' defaultValue={clickOrigin} />
+
+        <Button type='submit' color='orange' size='large' value='send'>
+          Submit enquiry
         </Button>
       </FormWrap>
-      <FormResponse style={{ opacity: sent ? 1 : 0 }}>
+      <FormResponse>
         <p>{responseMessage === '' ? '' : responseMessage}</p>
       </FormResponse>
     </Container>

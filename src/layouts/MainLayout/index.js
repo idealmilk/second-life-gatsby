@@ -5,7 +5,13 @@ import { ContactForm } from 'components/common/Forms';
 
 import { Container, Content, ChildrenWrap } from './styled';
 
-const MainLayout = ({ children, modalOpen, parentCallback, email }) => {
+const MainLayout = ({
+  children,
+  modalOpen,
+  parentCallback,
+  email,
+  clickOrigin,
+}) => {
   return (
     <Container>
       <Content>
@@ -18,7 +24,11 @@ const MainLayout = ({ children, modalOpen, parentCallback, email }) => {
       {modalOpen && (
         <ContactModal parentCallback={parentCallback}>
           <h2>Book your consultation</h2>
-          <ContactForm givenEmail={email} />
+          <ContactForm
+            givenEmail={email}
+            contactType='Consultation'
+            clickOrigin={clickOrigin}
+          />
         </ContactModal>
       )}
     </Container>

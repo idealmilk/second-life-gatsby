@@ -5,7 +5,7 @@ import { ContactForm } from 'components/common/Forms';
 
 import { Container } from './styled';
 
-const ContactButton = ({ color, endpoint, router, children }) => {
+const ContactButton = ({ children, clickOrigin }) => {
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleModalOpen = () => {
@@ -21,7 +21,7 @@ const ContactButton = ({ color, endpoint, router, children }) => {
       {modalOpen && (
         <ContactModal parentCallback={handleModalOpen}>
           <h2>Book your consultation</h2>
-          <ContactForm endpoint={endpoint} router={router} />
+          <ContactForm contactType='Consultation' clickOrigin={clickOrigin} />
         </ContactModal>
       )}
     </>

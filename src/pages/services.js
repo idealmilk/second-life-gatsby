@@ -7,13 +7,19 @@ import { PageHeader, SEO, ServicePreview } from 'components';
 const ServicesPage = ({ data }) => {
   const { edges } = data.allContentfulService;
   const [modalOpen, setModalOpen] = useState(false);
+  const [clickOrigin, setClickOrigin] = useState(false);
 
-  const handleModalOpen = () => {
+  const handleModalOpen = (title) => {
     setModalOpen(!modalOpen);
+    setClickOrigin(title);
   };
 
   return (
-    <MainLayout modalOpen={modalOpen} parentCallback={handleModalOpen}>
+    <MainLayout
+      modalOpen={modalOpen}
+      parentCallback={handleModalOpen}
+      clickOrigin={clickOrigin}
+    >
       <SEO />
 
       <PageHeader title='Services' header='Services for all stages of life' />
@@ -23,7 +29,8 @@ const ServicesPage = ({ data }) => {
         return (
           <ServicePreview
             {...service}
-            callbackFunction={handleModalOpen}
+            callbackFunction={() => handleModalOpen(service.node.title)}
+            setClickOrigin={setClickOrigin}
             key={index}
             reverse={index}
           />

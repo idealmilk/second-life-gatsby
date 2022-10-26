@@ -115,7 +115,9 @@ const Header = () => {
             </Link>
           </NavItem>
           <ButtonWrap>
-            <ContactButton>Book consultation</ContactButton>
+            <ContactButton clickOrigin='Header'>
+              Book consultation
+            </ContactButton>
           </ButtonWrap>
         </NavList>
       </InnerWrap>
