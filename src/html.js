@@ -22,6 +22,7 @@ export default function HTML(props) {
         />
         {props.postBodyComponents}
       </body>
+      <script src='https://app.enzuzo.com/apps/enzuzo/static/js/__enzuzo-cookiebar.js?uuid=b6c9944e-5512-11ed-bce9-c7b9587cdbee'></script>
     </html>
   );
 }

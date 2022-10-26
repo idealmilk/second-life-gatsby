@@ -302,6 +302,14 @@ const GlobalStyles = styled.createGlobalStyle`
     a,
     button {
       font-size: 1.6rem !important;
+      color: ${(props) => props.theme.colors.orange} !important;
+    }
+    a {
+      color: ${(props) => props.theme.colors.orange} !important;
+    }
+    button {
+      background: ${(props) => props.theme.colors.orange} !important;
+      color: white !important;
     }
   }
 
