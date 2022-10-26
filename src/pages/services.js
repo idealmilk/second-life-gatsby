@@ -42,7 +42,7 @@ const ServicesPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allContentfulService {
+    allContentfulService(sort: { fields: contentful_id, order: ASC }) {
       edges {
         node {
           title

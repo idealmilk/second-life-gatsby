@@ -116,7 +116,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulService {
+    allContentfulService(sort: { fields: contentful_id, order: ASC }) {
       edges {
         node {
           title
@@ -129,7 +129,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulCaseStudy {
+    allContentfulCaseStudy(sort: { fields: contentful_id, order: ASC }) {
       edges {
         node {
           title
@@ -144,7 +144,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulPublication {
+    allContentfulPublication(sort: { fields: contentful_id, order: ASC }) {
       edges {
         node {
           logo {
