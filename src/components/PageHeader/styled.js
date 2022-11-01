@@ -40,17 +40,18 @@ export const InnerWrap = styled.div`
   text-align: center;
   color: white;
   h1 {
-    margin: 0 0 30px;
+    margin: 0 0 3rem;
     font-size: 5rem;
     height: 16.5rem;
+    transform: ${(props) => (props.title ? 'none' : 'translateY(9rem)')};
   }
   h4 {
     display: inline-block;
-    margin: 9rem 0 1.8rem;
+    margin: 4rem 0 1.8rem;
     font-size: 1.2rem;
     width: auto;
-    border-radius: 16px;
-    padding: 8px 20px;
+    border-radius: 1.6rem;
+    padding: 0.8rem 2rem;
     text-transform: uppercase;
     color: white;
     background-color: ${(props) => props.theme.colors.orange};

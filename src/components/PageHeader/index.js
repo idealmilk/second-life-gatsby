@@ -11,9 +11,9 @@ const PageHeader = ({ title, header, image }) => {
     <Container>
       <Circle />
       <ImageOverlay backgroundImage={backgroundImage.file.url} />
-      <InnerWrap>
-        <h4>{title}</h4>
-        <h1>{header}</h1>
+      <InnerWrap title={title}>
+        {title && <h4>{title}</h4>}
+        {header && <h1>{header}</h1>}
 
         {image && <img src={image.file.url} alt='' />}
       </InnerWrap>
