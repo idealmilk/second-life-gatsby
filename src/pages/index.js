@@ -129,7 +129,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulCaseStudy(sort: { fields: contentful_id, order: ASC }) {
+    allContentfulCaseStudy(sort: { fields: order, order: ASC }) {
       edges {
         node {
           title
