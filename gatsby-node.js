@@ -19,6 +19,13 @@ module.exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allContentfulSitePage {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
     }
   `);
 
@@ -38,6 +45,16 @@ module.exports.createPages = async ({ graphql, actions }) => {
     createPage({
       component: path.resolve('./src/templates/CaseStudy/index.js'),
       path: `/case-studies/${edge.node.slug}`,
+      context: {
+        slug: edge.node.slug,
+      },
+    });
+  });
+
+  res.data.allContentfulSitePage.edges.forEach((edge) => {
+    createPage({
+      component: path.resolve('./src/templates/SitePage/index.js'),
+      path: `/${edge.node.slug}`,
       context: {
         slug: edge.node.slug,
       },
