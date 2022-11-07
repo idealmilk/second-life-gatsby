@@ -26,10 +26,15 @@ module.exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allContentfulBlog {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
     }
   `);
-
-  console.log(res);
 
   res.data.allContentfulService.edges.forEach((edge) => {
     createPage({
@@ -55,6 +60,16 @@ module.exports.createPages = async ({ graphql, actions }) => {
     createPage({
       component: path.resolve('./src/templates/SitePage/index.js'),
       path: `/${edge.node.slug}`,
+      context: {
+        slug: edge.node.slug,
+      },
+    });
+  });
+
+  res.data.allContentfulBlog.edges.forEach((edge) => {
+    createPage({
+      component: path.resolve('./src/templates/Blog/index.js'),
+      path: `/blog/${edge.node.slug}`,
       context: {
         slug: edge.node.slug,
       },

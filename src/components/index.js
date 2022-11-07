@@ -1,3 +1,4 @@
+export { default as Blogs } from './Blogs';
 export { default as CaseStudies } from './CaseStudies';
 export { default as ContactModal } from './ContactModal';
 export { default as Footer } from './Footer';

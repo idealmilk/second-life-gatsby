@@ -3,11 +3,11 @@ import { Link } from 'gatsby';
 
 import { RichText } from 'components';
 import { FeatureWrap } from 'components/common/Containers/styled';
-import { Button, ContactButton } from 'components/common/Buttons';
+import { Button } from 'components/common/Buttons';
 
 import { TextWrap, TitleWrap, ButtonWrap } from './styled';
 
-const Publications = ({ node, callbackFunction, reverse }) => {
+const ServicePreview = ({ node, callbackFunction, reverse }) => {
   return (
     <FeatureWrap reverse={reverse}>
       <TextWrap>
@@ -35,4 +35,4 @@ const Publications = ({ node, callbackFunction, reverse }) => {
   );
 };
 
-export default Publications;
+export default ServicePreview;
