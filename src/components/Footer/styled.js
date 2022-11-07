@@ -16,11 +16,22 @@ export const FormWrap = styled.div`
     color: white;
     margin-bottom: 2rem;
   }
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+    width: 100%;
+    h3 {
+      width: 100%;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
+  }
 `;
 
 export const Content = styled.div`
   display: flex;
   justify-content: space-between;
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+    display: block;
+  }
 `;
 
 export const Pages = styled.div`
@@ -48,6 +59,7 @@ export const PagesWrap = styled.div`
 
 export const PageList = styled.ul`
   margin-right: 120px;
+  text-align: center;
   &:last-of-type {
     margin: 0;
   }
@@ -82,6 +94,10 @@ export const LogoWrap = styled.div`
     width: 200px;
     color: white;
   }
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+    text-align: center;
+    display: block;
+  }
 `;
 
 export const SocialsWrap = styled.div`
@@ -94,6 +110,15 @@ export const SocialsWrap = styled.div`
     svg {
       background: none;
       font-size: 24px;
+    }
+  }
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+    width: 20%;
+    justify-content: space-between;
+    margin: 2rem auto 0;
+
+    a {
+      margin: 0;
     }
   }
 `;

@@ -52,7 +52,7 @@ export function NavMenu({ isOpen }) {
           }}
         >
           <Link
-            to='/about-us'
+            to='/about'
             style={{
               color:
                 location.pathname === '/about-us'
@@ -60,7 +60,7 @@ export function NavMenu({ isOpen }) {
                   : 'black',
             }}
           >
-            About Us
+            About
           </Link>
         </NavLink>
 

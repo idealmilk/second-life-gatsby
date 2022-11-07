@@ -30,6 +30,13 @@ export const Container = styled.div`
   .slick-next {
     transform: translate(-18rem, -5rem);
   }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+    .slick-prev,
+    .slick-next {
+      display: none !important;
+    }
+  }
 `;
 
 export const InnerWrap = styled.div``;
