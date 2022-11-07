@@ -68,4 +68,19 @@ export const FeatureWrap = styled(InnerWrap)`
   div:last-of-type {
     order: ${(props) => (props.reverse !== 1 ? -1 : 2)};
   }
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+    display: block;
+    img {
+      width: 100%;
+      margin: 4rem 0 0;
+      border-radius: 2.5rem;
+      object-fit: cover;
+    }
+    div {
+      width: 100%;
+    }
+    div:last-of-type {
+      order: ${(props) => (props.reverse !== 1 ? 2 : -1)};
+    }
+  }
 `;

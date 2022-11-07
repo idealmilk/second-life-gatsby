@@ -9,11 +9,14 @@ export const Circle = styled.div`
   position: absolute;
   top: -200rem;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translate(-50%, -20rem);
   width: 300vh;
   height: 300vh;
   background-color: ${(props) => props.theme.colors.blue};
   border-radius: 50%;
+  @media (max-width: ${(props) => props.theme.breakpoints.laptop}) {
+    transform: translate(-50%, 0);
+  }
   @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
     display: block;
     padding: 170px 0 120px;
@@ -25,10 +28,6 @@ export const ImageOverlay = styled(Circle)`
   background-position: 130% 0;
   background-size: contain;
   opacity: 14%;
-  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
-    display: block;
-    padding: 170px 0 120px;
-  }
 `;
 
 export const InnerWrap = styled.div`
