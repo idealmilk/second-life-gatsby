@@ -63,4 +63,9 @@ export const InnerWrap = styled.div`
   button {
     margin-top: 40px;
   }
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+    h1 {
+      font-size: 3.6rem;
+    }
+  }
 `;

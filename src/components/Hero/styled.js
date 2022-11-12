@@ -14,6 +14,26 @@ export const Container = styled.div`
   background-position: right -40rem top -14rem;
   background-color: orange;
   transform: translateY(-110.17px);
+  @media (max-width: 1330px) {
+    background-size: 150% auto;
+    background-position: right -50rem top -14rem;
+  }
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletLan}) {
+    background-size: 150% auto;
+    background-position: right -42rem top -6rem;
+  }
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+    background-size: 180% auto;
+    background-position: right -50rem top -4rem;
+  }
+  @media (max-width: 700px) {
+    background-size: 220% auto;
+    background-position: right -38rem top 6rem;
+  }
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+    background-size: cover;
+    background-position: center;
+  }
 `;
 
 export const InnerWrapStyled = styled(TightInnerWrap)`
@@ -31,8 +51,25 @@ export const ContentWrap = styled.div`
     margin: 1rem 0;
     width: 75%;
   }
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+    width: 100%;
+    margin: 48vh auto;
+    text-align: center;
+    p {
+      text-align: center;
+      margin: 1rem auto 3rem;
+    }
+    h1 {
+      text-align: center;
+      width 75%;
+      margin: 0 auto;
+    }
+  }
 `;
 
 export const FormWrap = styled.div`
   width: 75%;
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+    margin: 0 auto;
+  }
 `;

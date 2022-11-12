@@ -16,6 +16,12 @@ export const CaseStudiesWrap = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 3rem;
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+    margin-bottom: 0;
+  }
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+    display: block;
+  }
 `;
 
 export const CaseStudy = styled.div`
@@ -33,5 +39,17 @@ export const CaseStudy = styled.div`
       font-family: 'Gotham Bold';
       font-size: 2.6rem;
     }
+  }
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+    p {
+      &:first-of-type {
+        margin: 1rem 0 0.6rem;
+        font-size: 2.2rem;
+      }
+    }
+  }
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+    width: 100%;
+    margin-bottom: 6rem;
   }
 `;

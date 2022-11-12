@@ -59,7 +59,6 @@ export const PagesWrap = styled.div`
 
 export const PageList = styled.ul`
   margin-right: 120px;
-  text-align: center;
   &:last-of-type {
     margin: 0;
   }
@@ -67,6 +66,7 @@ export const PageList = styled.ul`
     margin-right: 0;
     margin-bottom: 30px;
     width: 50%;
+    text-align: center;
   }
 `;
 
@@ -102,21 +102,22 @@ export const LogoWrap = styled.div`
 
 export const SocialsWrap = styled.div`
   display: flex;
+  transform: translateY(3rem);
   a {
-    margin-left: 18px;
+    margin-right: 1.8rem;
     &:last-of-type {
-      margin-left: 0;
+      margin-right: 0;
     }
     svg {
       background: none;
-      font-size: 24px;
+      font-size: 2.4rem;
     }
   }
   @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
     width: 20%;
     justify-content: space-between;
     margin: 2rem auto 0;
-
+    transform: none;
     a {
       margin: 0;
     }

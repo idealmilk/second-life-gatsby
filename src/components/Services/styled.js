@@ -21,15 +21,24 @@ export const ServicesWrap = styled.div`
   width: 100%;
   justify-content: space-between;
   margin: 4rem 0 1rem;
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+    display: block;
+  }
 `;
 
 export const Service = styled.div`
-  width: 30%;
+  width: 70%;
   text-align: center;
   p {
     font-family: 'Gotham Bold';
     font-size: 2.6rem;
     color: white;
+  }
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+    margin: 0 auto 6rem;
+    p {
+      font-size: 1.8rem;
+    }
   }
 `;
 
