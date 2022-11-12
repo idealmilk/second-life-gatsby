@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 
 import MainLayout from 'layouts/MainLayout';
 import { Blogs, PageHeader, SEO } from 'components';
-import { TightInnerWrap } from 'components/common/containers/styled';
+import { TightInnerWrap } from 'components/common/Containers/styled';
 
 const BlogPage = ({ data }) => {
   const { allContentfulBlog } = data;
