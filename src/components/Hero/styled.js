@@ -53,7 +53,7 @@ export const ContentWrap = styled.div`
   }
   @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
     width: 100%;
-    margin: 48vh auto;
+    margin: 36vh auto;
     text-align: center;
     p {
       text-align: center;
@@ -61,7 +61,7 @@ export const ContentWrap = styled.div`
     }
     h1 {
       text-align: center;
-      width 75%;
+      width: 90%;
       margin: 0 auto;
     }
   }

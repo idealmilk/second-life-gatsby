@@ -39,7 +39,7 @@ export const InputContainer = styled.div`
     padding: 14px;
     border: none;
     font-size: 1.6rem;
-    border-radius: 6px;
+    border-radius: 4rem;
     background: ${(props) => (props.color === 'blue' ? '#eef3f6' : 'white')};
   }
   @media (max-width: ${(props) => props.theme.breakpoints.tabletLan}) {
@@ -71,8 +71,13 @@ export const FormContainer = styled.div`
 export const Form = styled.form`
   display: flex;
   background: #ffffff;
-  border-radius: 40px;
+  border-radius: 4rem;
   overflow: hidden;
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+    background: transparent;
+    display: block;
+    border-radius: 0;
+  }
 `;
 
 export const Button = styled.button`
@@ -84,4 +89,9 @@ export const Button = styled.button`
   border: 0;
   text-align: center;
   cursor: pointer;
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+    width: auto;
+    padding: 1.4rem 3rem;
+    margin-top: 1rem;
+  }
 `;
