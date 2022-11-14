@@ -58,6 +58,11 @@ export const BodyWrap = styled.div`
     border-radius: 2.5rem;
     margin: -16rem auto 8rem;
   }
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+    .cover-image {
+      margin: -14rem auto 8rem;
+    }
+  }
 `;
 
 export const FeatureWrap = styled(InnerWrap)`
