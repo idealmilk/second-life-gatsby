@@ -15,8 +15,8 @@ export const Content = styled.div`
 `;
 
 export const ChildrenWrap = styled.div`
-  transform: translateY(110.5px);
-  padding-bottom: 110.5px;
+  /* transform: translateY(11.05rem);
+  padding-bottom: 11.05rem; */
 `;
 
 export const EventTitle = styled.div`

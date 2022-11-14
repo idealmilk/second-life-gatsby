@@ -49,6 +49,15 @@ export const BodyWrap = styled.div`
   h3 {
     margin: 3rem 0 1rem;
   }
+  .cover-image {
+    display: block;
+    width: 40rem;
+    max-height: 30rem;
+    max-width: 90%;
+    object-fit: cover;
+    border-radius: 2.5rem;
+    margin: -16rem auto 8rem;
+  }
 `;
 
 export const FeatureWrap = styled(InnerWrap)`

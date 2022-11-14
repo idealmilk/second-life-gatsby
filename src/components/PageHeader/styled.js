@@ -2,28 +2,31 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   position: relative;
-  margin-bottom: 15rem;
-`;
-
-export const Circle = styled.div`
-  position: absolute;
-  top: -200rem;
-  left: 50%;
-  transform: translate(-50%, -20rem);
-  width: 300vh;
-  height: 300vh;
-  background-color: ${(props) => props.theme.colors.blue};
-  border-radius: 50%;
-  @media (max-width: ${(props) => props.theme.breakpoints.laptop}) {
-    transform: translate(-50%, 0);
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 10rem;
+  z-index: -1;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: ${(props) => props.theme.colors.blue};
+    border-radius: 0 0 50% 50%/ 0 0 100% 100%;
+    transform: scaleX(1.5);
   }
   @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
-    display: block;
-    padding: 170px 0 120px;
+    height: 34vh;
   }
 `;
 
-export const ImageOverlay = styled(Circle)`
+export const ImageOverlay = styled(Container)`
   background-image: ${(props) => `url(${props.backgroundImage})`};
   background-position: 130% 0;
   background-size: contain;
@@ -32,10 +35,10 @@ export const ImageOverlay = styled(Circle)`
 
 export const InnerWrap = styled.div`
   position: relative;
+  z-index: 1;
+  margin: 0 auto;
   width: 540px;
   max-width: 90%;
-  margin: 0 auto;
-  z-index: 10;
   text-align: center;
   color: white;
   h1 {
@@ -46,7 +49,7 @@ export const InnerWrap = styled.div`
   }
   h4 {
     display: inline-block;
-    margin: 4rem 0 1.8rem;
+    margin: 8rem 0 1.8rem;
     font-size: 1.2rem;
     width: auto;
     border-radius: 1.6rem;
@@ -55,17 +58,26 @@ export const InnerWrap = styled.div`
     color: white;
     background-color: ${(props) => props.theme.colors.orange};
   }
-  img {
-    width: 40rem;
-    border-radius: 2.5rem;
-    margin: -6rem 0 -8rem;
-  }
+
   button {
     margin-top: 40px;
   }
   @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+    transform: translateY(2rem);
     h1 {
       font-size: 3.6rem;
+    }
+    img {
+      margin: -10rem 0 0;
+    }
+  }
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+    transform: translateY(8rem);
+    h4 {
+      margin-top: 0;
+    }
+    h1 {
+      font-size: 2.6rem;
     }
   }
 `;

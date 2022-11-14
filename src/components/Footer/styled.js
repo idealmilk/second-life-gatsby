@@ -17,7 +17,9 @@ export const FormWrap = styled.div`
     margin-bottom: 2rem;
   }
   @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
-    width: 100%;
+    text-align: center;
+    width: 70%;
+    margin: 0 auto 4rem;
     h3 {
       width: 100%;
       margin: 0 auto 2rem;

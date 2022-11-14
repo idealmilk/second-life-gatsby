@@ -12,9 +12,12 @@ const BlogTemplate = ({ data }) => {
     <MainLayout>
       <SEO />
 
-      <PageHeader title='Blog' header={title} image={coverImage} />
+      <PageHeader title='Blog' header={title} />
 
       <BodyWrap>
+        {coverImage && (
+          <img src={coverImage.file.url} alt='' class='cover-image' />
+        )}
         <RichText {...body} />
       </BodyWrap>
     </MainLayout>

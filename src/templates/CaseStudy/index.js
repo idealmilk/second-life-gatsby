@@ -23,7 +23,19 @@ const CaseStudyTemplate = ({ data }) => {
     <MainLayout>
       <SEO />
 
-      <PageHeader title='Case Studies' header={title} image={customerImage} />
+      <PageHeader title='Case Studies' header={title} />
+
+      {customerImage && (
+        <BodyWrap>
+          <img src={customerImage.file.url} alt='' class='cover-image' />
+        </BodyWrap>
+      )}
+
+      <BodyWrap>
+        {customerImage && (
+          <img src={customerImage.file.url} alt='' class='cover-image' />
+        )}
+      </BodyWrap>
 
       <CustomerName>
         <p>{customerNames}</p>

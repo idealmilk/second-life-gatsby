@@ -12,9 +12,10 @@ const ServiceTemplate = ({ data }) => {
     <MainLayout>
       <SEO />
 
-      <PageHeader title='Services' header={title} image={image} />
+      <PageHeader title='Services' header={title} />
 
       <BodyWrap>
+        {image && <img src={image.file.url} alt='' class='cover-image' />}
         <RichText {...body} />
       </BodyWrap>
     </MainLayout>
