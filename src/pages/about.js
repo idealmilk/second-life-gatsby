@@ -38,7 +38,7 @@ const AboutPage = ({ data }) => {
 
   return (
     <MainLayout>
-      <SEO />
+      <SEO title='About' />
       <PageHeader title={title} header={header} />
 
       {features.map((feature, index) => {

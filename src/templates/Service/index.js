@@ -10,7 +10,7 @@ const ServiceTemplate = ({ data }) => {
 
   return (
     <MainLayout>
-      <SEO />
+      <SEO title={title} image={image.file.url} article={true} />
 
       <PageHeader title='Services' header={title} />
 

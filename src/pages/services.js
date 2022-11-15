@@ -20,7 +20,7 @@ const ServicesPage = ({ data }) => {
       parentCallback={handleModalOpen}
       clickOrigin={clickOrigin}
     >
-      <SEO />
+      <SEO title='Services' />
 
       <PageHeader title='Services' header='Services for all stages of life' />
 

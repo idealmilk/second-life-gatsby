@@ -8,7 +8,7 @@ import { BodyWrap } from 'components/common/Containers/styled';
 const ContactPage = () => {
   return (
     <MainLayout>
-      <SEO />
+      <SEO title='Contact' />
 
       <PageHeader title='Contact' header='Contact' />
 

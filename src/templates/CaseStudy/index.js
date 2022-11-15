@@ -21,7 +21,7 @@ const CaseStudyTemplate = ({ data }) => {
 
   return (
     <MainLayout>
-      <SEO />
+      <SEO title={title} image={customerImage.file.url} article={true} />
 
       <PageHeader title='Case Studies' header={title} />
 

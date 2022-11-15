@@ -17,7 +17,7 @@ const PricingPage = ({ data }) => {
   } = data.contentfulPricingPage;
   return (
     <MainLayout>
-      <SEO />
+      <SEO title='Pricing' />
 
       <PageHeader title={title} header={header} />
 

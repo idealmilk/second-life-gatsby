@@ -6,11 +6,16 @@ import { PageHeader, RichText, SEO } from 'components';
 import { BodyWrap } from 'components/common/Containers/styled';
 
 const BlogTemplate = ({ data }) => {
-  const { title, body, coverImage } = data.contentfulBlog;
+  const { title, metaDescription, body, coverImage } = data.contentfulBlog;
 
   return (
     <MainLayout>
-      <SEO />
+      <SEO
+        title={title}
+        description={metaDescription}
+        image={coverImage.file.url}
+        article={true}
+      />
 
       <PageHeader title='Blog' header={title} />
 

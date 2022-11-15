@@ -10,7 +10,7 @@ const BlogPage = ({ data }) => {
 
   return (
     <MainLayout>
-      <SEO />
+      <SEO title='Blog' />
 
       <PageHeader title='Blog' header='Read our blog' />
 
