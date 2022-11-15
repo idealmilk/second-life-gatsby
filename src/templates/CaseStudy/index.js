@@ -31,12 +31,6 @@ const CaseStudyTemplate = ({ data }) => {
         </BodyWrap>
       )}
 
-      <BodyWrap>
-        {customerImage && (
-          <img src={customerImage.file.url} alt='' class='cover-image' />
-        )}
-      </BodyWrap>
-
       <CustomerName>
         <p>{customerNames}</p>
       </CustomerName>
