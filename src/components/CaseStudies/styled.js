@@ -29,6 +29,10 @@ export const CaseStudy = styled.div`
   background: ${(props) => props.theme.colors.blue};
   border-radius: 2.5rem;
   padding: 2rem;
+  transition: transform 450ms;
+  &:hover {
+    transform: scale(1.08);
+  }
   img {
     border-radius: 2.2rem;
   }
@@ -46,6 +50,9 @@ export const CaseStudy = styled.div`
         margin: 1rem 0 0.6rem;
         font-size: 2.2rem;
       }
+    }
+    &:hover {
+      transform: none;
     }
   }
   @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {

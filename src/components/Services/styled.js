@@ -20,7 +20,7 @@ export const ServicesWrap = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
-  margin: 4rem 0 1rem;
+  margin: 4rem 0;
   @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
     display: block;
   }
@@ -29,10 +29,19 @@ export const ServicesWrap = styled.div`
 export const Service = styled.div`
   width: 70%;
   text-align: center;
+  transition: transform 450ms;
   p {
     font-family: 'Gotham Bold';
     font-size: 2.6rem;
     color: white;
+  }
+  &:hover {
+    transform: scale(1.08);
+  }
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+    &:hover {
+      transform: none;
+    }
   }
   @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
     margin: 0 auto 6rem;
