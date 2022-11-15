@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const BlogWrap = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: 20rem -1.5rem 4rem;
+  margin: 11rem -1.5rem 4rem;
   @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
     margin: -1rem 0;
   }
