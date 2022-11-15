@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import { FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 
 import { LogoWhite } from 'assets/Logos';
@@ -21,6 +21,10 @@ import {
 } from './styled';
 
 const Footer = () => {
+  const { twitter, linkedIn, copyright } = useStaticQuery(
+    query
+  ).contentfulSiteData;
+
   const [email, setEmail] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -88,7 +92,7 @@ const Footer = () => {
           <img src={LogoWhite} alt='Second Life' />
           <SocialsWrap>
             <a
-              href='https://www.linkedin.com/company/secondlife/mycompany/'
+              href={linkedIn}
               target='_blank'
               rel='noreferrer'
               aria-label='LinkedIn'
@@ -96,7 +100,7 @@ const Footer = () => {
               <FaLinkedinIn color='white' />
             </a>
             <a
-              href=' https://twitter.com/secondlife'
+              href={twitter}
               target='_blank'
               rel='noreferrer'
               aria-label='Twitter'
@@ -106,7 +110,7 @@ const Footer = () => {
           </SocialsWrap>
         </LogoWrap>
         <SmallPrint>
-          <p>© 2022 Second Life Ltd. All Rights Reserved</p>
+          <p>{copyright}</p>
         </SmallPrint>
       </InnerWrap>
       {modalOpen && (
@@ -122,5 +126,15 @@ const Footer = () => {
     </Container>
   );
 };
+
+const query = graphql`
+  query {
+    contentfulSiteData {
+      twitter
+      linkedIn
+      copyright
+    }
+  }
+`;
 
 export default Footer;

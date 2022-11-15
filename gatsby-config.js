@@ -5,9 +5,9 @@ module.exports = {
     title: 'Second Life',
     titleTemplate: '',
     description: 'Financial Planning',
-    siteUrl: 'http://secondlife.com',
+    siteUrl: 'https://www.secondlifefp.co.uk/',
     image: '/imgs/logo.png',
-    linkedIn: 'https://www.linkedin.com/company/secondlife/mycompany',
+    linkedIn: 'https://www.linkedin.com/in/robinpowell/',
   },
   proxy: [
     {
@@ -27,14 +27,20 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: 'https://secondlife.com',
+        siteUrl: 'https://http://www.secondlifefp.co.uk/',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: 'src/assets/Logos/favicon.png',
       },
     },
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'http://secondlife.com',
-        sitemap: 'http://secondlife.com/sitemap.xml',
+        host: 'httpss://http://www.secondlifefp.co.uk/',
+        sitemap: 'https://http://www.secondlifefp.co.uk//sitemap.xml',
         policy: [
           {
             userAgent: '*',
