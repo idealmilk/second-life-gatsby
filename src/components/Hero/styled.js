@@ -13,7 +13,7 @@ export const Container = styled.div`
   background-size: 130% auto;
   background-position: right -40rem top -14rem;
   background-color: orange;
-  transform: translateY(-110.17px);
+  margin-bottom: 14rem;
   @media (max-width: 1330px) {
     background-size: 150% auto;
     background-position: right -50rem top -14rem;
