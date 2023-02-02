@@ -10,7 +10,7 @@ const Services = ({ edges }) => {
   return (
     <Container>
       <TightInnerWrap>
-        <h2>Our Services</h2>
+        <h2>Our services</h2>
         <p>
           We empower self-motivated individuals to take control of their
           finances and plan for their financial freedom
