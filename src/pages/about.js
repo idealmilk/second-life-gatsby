@@ -10,7 +10,7 @@ import {
   Testimonials,
 } from 'components';
 
-import { FeatureWrap } from 'components/common/Containers/styled';
+import { FeatureWrap, TextWrap } from 'components/common/Containers/styled';
 
 const AboutPage = ({ data }) => {
   const {
@@ -22,6 +22,7 @@ const AboutPage = ({ data }) => {
   const {
     title,
     header,
+    description,
     body1,
     body2,
     body3,
@@ -40,6 +41,10 @@ const AboutPage = ({ data }) => {
     <MainLayout>
       <SEO title='About' />
       <PageHeader title={title} header={header} />
+
+      <TextWrap style={{ marginBottom: '10rem' }}>
+        <RichText {...description} />
+      </TextWrap>
 
       {features.map((feature, index) => {
         console.log(index);
