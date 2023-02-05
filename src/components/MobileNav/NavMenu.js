@@ -26,8 +26,8 @@ const servicesMenu = [
     slug: '/services/retirement-planning',
   },
   {
-    title: 'Mentoring & coaching',
-    slug: '/services/mentoring-and-coaching',
+    title: 'Coaching & mentoring',
+    slug: '/services/coaching-and-mentoring',
   },
 ];
 

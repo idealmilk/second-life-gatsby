@@ -31,6 +31,15 @@ export const Container = styled.div`
     transform: translate(-18rem, -5rem);
   }
 
+  @media (max-width: ${(props) => props.theme.breakpoints.tabletLan}) {
+    .slick-prev {
+      transform: translate(18rem, 10rem);
+    }
+    .slick-next {
+      transform: translate(-18rem, 10rem);
+    }
+  }
+
   @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
     .slick-prev,
     .slick-next {
