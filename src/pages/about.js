@@ -55,7 +55,9 @@ const AboutPage = ({ data }) => {
               src={feature.image.file.url}
               alt='Feature'
               class={
-                feature.image.file.url.includes('WebIcons') ? '' : 'drop-shadow'
+                feature.image.file.url.includes('WebIcons')
+                  ? 'web-icon'
+                  : 'drop-shadow'
               }
             />
           </FeatureWrap>

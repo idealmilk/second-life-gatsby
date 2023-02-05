@@ -102,6 +102,29 @@ export const FeatureWrap = styled(InnerWrap)`
   div:last-of-type {
     order: ${(props) => (props.reverse !== 1 ? -1 : 2)};
   }
+  .web-icon {
+    object-fit: contain !important;
+  }
+  a {
+    position: relative;
+    color: ${(props) => props.theme.colors.orange};
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      background-color: ${(props) => props.theme.colors.orange};
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
   @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
     display: block;
     img {
