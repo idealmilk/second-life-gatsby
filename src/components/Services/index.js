@@ -12,8 +12,8 @@ const Services = ({ edges }) => {
       <TightInnerWrap>
         <h2>Our services</h2>
         <p>
-          We empower self-motivated individuals to take control of their
-          finances and plan for their financial freedom
+          We empower people to take charge of their future through holistic
+          financial planning and ongoing coaching and mentoring.
         </p>
         <ServicesWrap>
           {Object.values(edges).map((service) => {
