@@ -40,16 +40,12 @@ const RichText = (body) => {
             <a
               href={node.data.uri}
               target={`${
-                node.data.uri.startsWith(
-                  'https://xenodochial-dubinsky-db8110.netlify.app'
-                )
+                node.data.uri.startsWith('https://www.secondlifefp.co.uk/')
                   ? '_self'
                   : '_blank'
               }`}
               rel={`${
-                node.data.uri.startsWith(
-                  'https://xenodochial-dubinsky-db8110.netlify.app'
-                )
+                node.data.uri.startsWith('https://www.secondlifefp.co.uk/')
                   ? ''
                   : 'noopener noreferrer'
               }`}

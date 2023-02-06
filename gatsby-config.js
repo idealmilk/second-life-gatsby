@@ -27,7 +27,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: 'https://http://www.secondlifefp.co.uk/',
+        siteUrl: 'https://www.secondlifefp.co.uk/',
       },
     },
     {
@@ -39,8 +39,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'httpss://http://www.secondlifefp.co.uk/',
-        sitemap: 'https://http://www.secondlifefp.co.uk//sitemap.xml',
+        host: 'httpss://www.secondlifefp.co.uk/',
+        sitemap: 'https://www.secondlifefp.co.uk//sitemap.xml',
         policy: [
           {
             userAgent: '*',
