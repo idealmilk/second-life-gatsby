@@ -38,6 +38,8 @@ const HomePage = ({ data }) => {
     featuresList,
     founderSectionBody,
     founderSectionHeader,
+    serviceSectionHeader,
+    serviceSectionBody,
     topSectionBody,
     topSectionHeader,
     videoEmbed,
@@ -62,7 +64,11 @@ const HomePage = ({ data }) => {
         <RichText {...topSectionBody} />
       </StyledTextWrap>
 
-      <Services {...allContentfulService} />
+      <Services
+        header={serviceSectionHeader}
+        body={serviceSectionBody}
+        {...allContentfulService}
+      />
 
       <Video video={videoEmbed} list={featuresList} />
 
@@ -95,6 +101,8 @@ export const query = graphql`
       founderSectionBody {
         raw
       }
+      serviceSectionHeader
+      serviceSectionBody
       founderSectionHeader
       topSectionBody {
         raw

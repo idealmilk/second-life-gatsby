@@ -6,15 +6,12 @@ import { Button } from 'components/common/Buttons';
 
 import { Container, ServicesWrap, Service, IconWrap } from './styled';
 
-const Services = ({ edges }) => {
+const Services = ({ header, body, edges }) => {
   return (
     <Container>
       <TightInnerWrap>
-        <h2>Our services</h2>
-        <p>
-          We empower people to take charge of their future through holistic
-          financial planning and ongoing coaching and mentoring.
-        </p>
+        <h2>{header}</h2>
+        <p>{body}</p>
         <ServicesWrap>
           {Object.values(edges).map((service) => {
             return (
