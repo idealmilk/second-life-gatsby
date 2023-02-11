@@ -12,7 +12,7 @@ export const FormWrap = styled.div`
   width: 45%;
   margin-bottom: 10rem;
   h3 {
-    width: 48%;
+    width: 60%;
     color: white;
     margin-bottom: 2rem;
   }

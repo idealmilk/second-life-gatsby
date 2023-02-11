@@ -46,6 +46,7 @@ export const ContentWrap = styled.div`
   background-color: transparent;
   color: white;
   width: 60%;
+  h1,
   p {
     margin: 1rem 0;
     width: 75%;

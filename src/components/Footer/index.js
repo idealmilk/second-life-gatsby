@@ -21,6 +21,7 @@ import {
 } from './styled';
 
 const Footer = () => {
+  const { header } = useStaticQuery(query).contentfulHero;
   const { twitter, linkedIn, copyright } = useStaticQuery(
     query
   ).contentfulSiteData;
@@ -37,7 +38,7 @@ const Footer = () => {
       <InnerWrap>
         <Content>
           <FormWrap>
-            <h3>Plan your financial freedom</h3>
+            <h3>{header}</h3>
             <EmailForm
               setEmailCallback={setEmail}
               toggleModalOpen={handleModalOpen}
@@ -133,6 +134,9 @@ const query = graphql`
       twitter
       linkedIn
       copyright
+    }
+    contentfulHero {
+      header
     }
   }
 `;
