@@ -83,6 +83,9 @@ const GlobalStyles = styled.createGlobalStyle`
     color: ${(props) => props.theme.colors.black};
     font-size: 1.8rem;
     line-height: 1.7;
+    @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+      font-size: 1.6rem;
+    }
   }
 
   i {

@@ -75,7 +75,12 @@ const HomePage = ({ data }) => {
       <CaseStudies {...allContentfulCaseStudy} />
 
       <h2
-        style={{ textAlign: 'center', margin: '0 auto 8rem', width: '42rem' }}
+        style={{
+          textAlign: 'center',
+          margin: '0 auto 4rem',
+          width: '42rem',
+          maxWidth: '90%',
+        }}
       >
         {founderSectionHeader}
       </h2>

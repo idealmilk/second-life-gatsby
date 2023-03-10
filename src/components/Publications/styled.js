@@ -16,26 +16,22 @@ export const Container = styled.div`
 export const LogoWrap = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center !important;
-  width: 100%;
   margin: 4rem 0 1rem;
 `;
 
 export const Logo = styled.div`
-  width: calc(20% - 35px);
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 33.3333%;
+  flex-basis: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  padding: 2rem;
   p {
     font-family: 'Gotham Bold';
     font-size: 2.6rem;
     color: white;
-  }
-  @media (max-width: ${(props) => props.theme.breakpoints.tabletLan}) {
-    width: calc(25% - 35px);
-  }
-  @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
-    width: calc(33% - 35px);
-  }
-  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
-    width: calc(50% - 35px);
   }
 `;

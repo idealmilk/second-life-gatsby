@@ -12,6 +12,13 @@ export const Container = styled.div`
   }
 `;
 
+export const CarouselWrap = styled.div`
+  display: none;
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+    display: block;
+  }
+`;
+
 export const CaseStudiesWrap = styled.div`
   display: flex;
   justify-content: space-between;
@@ -20,7 +27,7 @@ export const CaseStudiesWrap = styled.div`
     margin-bottom: 0;
   }
   @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
-    display: block;
+    display: none;
   }
 `;
 
@@ -47,8 +54,8 @@ export const CaseStudy = styled.div`
   @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
     p {
       &:first-of-type {
-        margin: 1rem 0 0.6rem;
-        font-size: 2.2rem;
+        margin: 1rem 0 1.6rem;
+        font-size: 1.8rem;
       }
     }
     &:hover {
@@ -56,7 +63,7 @@ export const CaseStudy = styled.div`
     }
   }
   @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
-    width: 100%;
-    margin-bottom: 6rem;
+    width: 90% !important;
+    margin: 0 6% 2rem 4%;
   }
 `;
