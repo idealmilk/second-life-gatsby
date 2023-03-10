@@ -26,6 +26,12 @@ export const FormWrap = styled.div`
       text-align: center;
     }
   }
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+    width: 90%;
+    button {
+      width: 100%;
+    }
+  }
 `;
 
 export const Content = styled.div`

@@ -316,6 +316,10 @@ const GlobalStyles = styled.createGlobalStyle`
   .enzuzo-notification-desc {
     font-size: 1.6rem;
   }
+
+  .hide {
+    top: -7rem !important;
+  }
 `;
 
 export default GlobalStyles;

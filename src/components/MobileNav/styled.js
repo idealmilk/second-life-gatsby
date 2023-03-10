@@ -14,6 +14,12 @@ export const NavbarContainer = styled.div`
   display: none;
   background-color: white;
   border-bottom: 1px #eeeeee solid;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+  .hide {
+    top: -7rem !important;
+  }
   @media (max-width: ${(props) => props.theme.breakpoints.tabletLan}) {
     display: block;
   }
