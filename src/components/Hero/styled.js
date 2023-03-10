@@ -39,6 +39,10 @@ export const InnerWrapStyled = styled(TightInnerWrap)`
   display: flex;
   flex-direction: row;
   height: 100%;
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+    position: relative;
+    height: 100vh;
+  }
 `;
 
 export const ContentWrap = styled.div`
@@ -65,11 +69,25 @@ export const ContentWrap = styled.div`
       margin: 0 auto;
     }
   }
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+    position: absolute;
+    bottom: 10rem;
+    margin: 0 auto;
+    p {
+      width: 100%;
+      margin-top: 2rem;
+    }
+  }
 `;
 
 export const FormWrap = styled.div`
   width: 75%;
   @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
     margin: 0 auto;
+  }
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+    button {
+      width: 100%;
+    }
   }
 `;
