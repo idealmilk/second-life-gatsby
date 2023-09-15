@@ -39,8 +39,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'httpss://www.secondlifefp.co.uk/',
-        sitemap: 'https://www.secondlifefp.co.uk//sitemap.xml',
+        host: 'https://www.secondlifefp.co.uk/',
+        sitemap: 'https://www.secondlifefp.co.uk/sitemap.xml',
         policy: [
           {
             userAgent: '*',
