@@ -6,7 +6,7 @@ module.exports = {
     titleTemplate: '',
     description: 'Financial Planning',
     siteUrl: 'https://www.secondlifefp.co.uk/',
-    image: '/imgs/logo.png',
+    image: '/imgs/hero-jpg',
     linkedIn: 'https://www.linkedin.com/in/robinpowell/',
   },
   proxy: [
