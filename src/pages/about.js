@@ -22,6 +22,9 @@ const AboutPage = ({ data }) => {
   const {
     title,
     header,
+    metaTitle,
+    metaDescription,
+    metaImage,
     description,
     body1,
     body2,
@@ -39,7 +42,12 @@ const AboutPage = ({ data }) => {
 
   return (
     <MainLayout>
-      <SEO title='About' />
+      <SEO
+        title={metaTitle}
+        description={metaDescription}
+        image={metaImage.file.url}
+      />
+
       <PageHeader title={title} header={header} />
 
       <TextWrap style={{ marginBottom: '10rem' }}>
@@ -74,6 +82,15 @@ const AboutPage = ({ data }) => {
 export const query = graphql`
   query {
     contentfulAboutPage {
+      title
+      header
+      metaTitle
+      metaDescription
+      metaImage {
+        file {
+          url
+        }
+      }
       body1 {
         raw
       }
@@ -86,7 +103,6 @@ export const query = graphql`
       description {
         raw
       }
-      header
       image1 {
         file {
           url
@@ -102,7 +118,6 @@ export const query = graphql`
           url
         }
       }
-      title
     }
     allContentfulTestimony {
       edges {

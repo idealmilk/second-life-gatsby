@@ -20,7 +20,7 @@ const StyledTextWrap = styled(TextWrap)`
 
 const HomePage = ({ data }) => {
   const {
-    contentfulHome,
+    contentfulHomePage,
     contentfulHero,
     allContentfulService,
     allContentfulCaseStudy,
@@ -35,6 +35,9 @@ const HomePage = ({ data }) => {
   };
 
   const {
+    metaTitle,
+    metaDescription,
+    metaImage,
     featuresList,
     founderSectionBody,
     founderSectionHeader,
@@ -44,7 +47,7 @@ const HomePage = ({ data }) => {
     topSectionHeader,
     videoEmbed,
     founderSectionImage,
-  } = contentfulHome;
+  } = contentfulHomePage;
 
   return (
     <MainLayout
@@ -52,7 +55,12 @@ const HomePage = ({ data }) => {
       modalOpen={modalOpen}
       email={email}
     >
-      <SEO />
+      <SEO
+        title={metaTitle}
+        description={metaDescription}
+        image={metaImage.file.url}
+      />
+
       <Hero
         {...contentfulHero}
         setEmailCallback={setEmail}
@@ -101,7 +109,14 @@ const HomePage = ({ data }) => {
 
 export const query = graphql`
   query {
-    contentfulHome {
+    contentfulHomePage {
+      metaTitle
+      metaDescription
+      metaImage {
+        file {
+          url
+        }
+      }
       featuresList
       founderSectionBody {
         raw

@@ -24,7 +24,9 @@ const SEO = ({ title, description, image, article }) => {
     url: `${siteUrl}${pathname}`,
   };
 
-  console.log(seo.image);
+  console.log(`meta title: ${seo.title}`);
+  console.log(`meta desc: ${seo.description}`);
+  console.log(`meta image: ${seo.image}`);
 
   return (
     <Helmet
