@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 
 import { Logo, LogoWhite } from 'assets/Logos';
-import { ContactButton } from 'components/common/Buttons';
+import { Button } from 'components/common/Buttons';
 
 import {
   Container,
@@ -115,9 +115,16 @@ const Header = () => {
             </Link>
           </NavItem>
           <ButtonWrap>
-            <ContactButton clickOrigin='Header'>
-              Book consultation
-            </ContactButton>
+            <Button clickOrigin='Header'>
+              <a
+                href='https://www.surveymonkey.co.uk/r/NHNTQ9T'
+                target='_blank'
+                rel='noreferrer'
+                aria-label='Twitter'
+              >
+                Book consultation
+              </a>
+            </Button>
           </ButtonWrap>
         </NavList>
       </InnerWrap>

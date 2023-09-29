@@ -56,26 +56,20 @@ export const ContentWrap = styled.div`
     width: 75%;
   }
   @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
+    position: absolute;
     width: 100%;
-    margin: 36vh auto;
+    bottom: 10rem;
+    margin: 0 auto;
     text-align: center;
     p {
+      width: 100%;
       text-align: center;
-      margin: 1rem auto 3rem;
+      margin: 2rem auto 3rem;
     }
     h1 {
       text-align: center;
       width: 90%;
       margin: 0 auto;
-    }
-  }
-  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
-    position: absolute;
-    bottom: 10rem;
-    margin: 0 auto;
-    p {
-      width: 100%;
-      margin-top: 2rem;
     }
   }
 `;
@@ -84,10 +78,5 @@ export const FormWrap = styled.div`
   width: 75%;
   @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
     margin: 0 auto;
-  }
-  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
-    button {
-      width: 100%;
-    }
   }
 `;

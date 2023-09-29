@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import { FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 
 import { LogoWhite } from 'assets/Logos';
-import { ContactModal } from 'components';
-import { ContactForm, EmailForm } from 'components/common/Forms';
+import { Button } from 'components/common/Buttons';
 import { InnerWrap } from 'components/common/Containers/styled';
 
 import {
@@ -26,23 +25,22 @@ const Footer = () => {
     query
   ).contentfulSiteData;
 
-  const [email, setEmail] = useState('');
-  const [modalOpen, setModalOpen] = useState(false);
-
-  const handleModalOpen = () => {
-    setModalOpen(!modalOpen);
-  };
-
   return (
     <Container>
       <InnerWrap>
         <Content>
           <FormWrap>
             <h3>{header}</h3>
-            <EmailForm
-              setEmailCallback={setEmail}
-              toggleModalOpen={handleModalOpen}
-            />
+            <Button clickOrigin='Header'>
+              <a
+                href='https://www.surveymonkey.co.uk/r/NHNTQ9T'
+                target='_blank'
+                rel='noreferrer'
+                aria-label='Twitter'
+              >
+                Book consultation
+              </a>
+            </Button>
           </FormWrap>
           <Pages>
             <PagesWrap>
@@ -114,16 +112,6 @@ const Footer = () => {
           <p>{copyright}</p>
         </SmallPrint>
       </InnerWrap>
-      {modalOpen && (
-        <ContactModal parentCallback={handleModalOpen}>
-          <h2>Book your consultation</h2>
-          <ContactForm
-            givenEmail={email}
-            contactType='Consultation'
-            clickOrigin='Footer'
-          />
-        </ContactModal>
-      )}
     </Container>
   );
 };
