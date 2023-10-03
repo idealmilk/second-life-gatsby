@@ -6,6 +6,15 @@ import { PageHeader, SEO, ServicePreview } from 'components';
 
 const ServicesPage = ({ data }) => {
   const { edges } = data.allContentfulService;
+
+  const {
+    title,
+    header,
+    metaTitle,
+    metaDescription,
+    metaImage,
+  } = data.contentfulServicesPage;
+
   const [modalOpen, setModalOpen] = useState(false);
   const [clickOrigin, setClickOrigin] = useState(false);
 
@@ -20,9 +29,13 @@ const ServicesPage = ({ data }) => {
       parentCallback={handleModalOpen}
       clickOrigin={clickOrigin}
     >
-      <SEO title='Services' />
+      <SEO
+        title={metaTitle}
+        description={metaDescription}
+        image={metaImage.file.url}
+      />
 
-      <PageHeader title='Services' header='Services for all stages of life' />
+      <PageHeader title={title} header={header} />
 
       {Object.values(edges).map((service, index) => {
         console.log(service);
@@ -42,6 +55,17 @@ const ServicesPage = ({ data }) => {
 
 export const query = graphql`
   query {
+    contentfulServicesPage {
+      title
+      header
+      metaTitle
+      metaDescription
+      metaImage {
+        file {
+          url
+        }
+      }
+    }
     allContentfulService(sort: { fields: contentful_id, order: ASC }) {
       edges {
         node {

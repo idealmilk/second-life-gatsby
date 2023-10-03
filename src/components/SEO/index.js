@@ -20,11 +20,13 @@ const SEO = ({ title, description, image, article }) => {
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
-    image: `${siteUrl}${image || defaultImage}`,
+    image: `https:${image}` || `${siteUrl + defaultImage}`,
     url: `${siteUrl}${pathname}`,
   };
 
-  console.log(seo.image);
+  console.log(`meta title: ${seo.title}`);
+  console.log(`meta desc: ${seo.description}`);
+  console.log(`meta image: ${seo.image}`);
 
   return (
     <Helmet

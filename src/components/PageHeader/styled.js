@@ -43,7 +43,7 @@ export const InnerWrap = styled.div`
   color: white;
   h1 {
     margin: 0 0 3rem;
-    font-size: 5rem;
+    font-size: ${(props) => (props.title === 'Blog' ? '4rem' : '5rem')};
     height: 16.5rem;
     transform: ${(props) => (props.title ? 'none' : 'translateY(9rem)')};
   }
@@ -65,7 +65,7 @@ export const InnerWrap = styled.div`
   @media (max-width: ${(props) => props.theme.breakpoints.tabletPor}) {
     transform: translateY(2rem);
     h1 {
-      font-size: 3.6rem;
+      font-size: ${(props) => (props.title === 'Blog' ? '2.8rem' : '3.6rem')};
     }
     img {
       margin: -10rem 0 0;

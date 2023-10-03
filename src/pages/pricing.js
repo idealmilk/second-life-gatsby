@@ -9,15 +9,23 @@ const PricingPage = ({ data }) => {
   const {
     title,
     header,
+    metaTitle,
+    metaDescription,
+    metaImage,
     body1,
     body2,
     body3,
     quote1,
     quote2,
   } = data.contentfulPricingPage;
+
   return (
     <MainLayout>
-      <SEO title='Pricing' />
+      <SEO
+        title={metaTitle}
+        description={metaDescription}
+        image={metaImage.file.url}
+      />
 
       <PageHeader title={title} header={header} />
 
@@ -57,6 +65,15 @@ const PricingPage = ({ data }) => {
 export const query = graphql`
   query {
     contentfulPricingPage {
+      title
+      header
+      metaTitle
+      metaDescription
+      metaImage {
+        file {
+          url
+        }
+      }
       body1 {
         raw
       }
@@ -66,10 +83,8 @@ export const query = graphql`
       body3 {
         raw
       }
-      header
       quote1
       quote2
-      title
     }
   }
 `;

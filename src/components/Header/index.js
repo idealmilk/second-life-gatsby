@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 
 import { Logo, LogoWhite } from 'assets/Logos';
-import { ContactButton } from 'components/common/Buttons';
+import { Button } from 'components/common/Buttons';
 
 import {
   Container,
@@ -14,6 +14,8 @@ import {
 } from './styled';
 
 const Header = () => {
+  const { formLink } = useStaticQuery(query).contentfulSiteData;
+
   const [activeNavItem, setActiveNavItem] = useState('');
   const [navBar, setNavBar] = useState(false);
   const [whiteLogoOpacity, setWhiteLogoOpacity] = useState(1);
@@ -115,14 +117,29 @@ const Header = () => {
             </Link>
           </NavItem>
           <ButtonWrap>
-            <ContactButton clickOrigin='Header'>
-              Book consultation
-            </ContactButton>
+            <Button clickOrigin='Header'>
+              <a
+                href={formLink}
+                target='_blank'
+                rel='noreferrer'
+                aria-label='Twitter'
+              >
+                Book consultation
+              </a>
+            </Button>
           </ButtonWrap>
         </NavList>
       </InnerWrap>
     </Container>
   );
 };
+
+const query = graphql`
+  query {
+    contentfulSiteData {
+      formLink
+    }
+  }
+`;
 
 export default Header;

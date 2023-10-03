@@ -294,6 +294,9 @@ const GlobalStyles = styled.createGlobalStyle`
     a {
       color: black !important;
     }
+    button a {
+      color: white !important;
+    }
   }
 
   .shadow-container {
