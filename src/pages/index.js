@@ -22,6 +22,7 @@ const HomePage = ({ data }) => {
   const {
     contentfulHomePage,
     contentfulHero,
+    contentfulSiteData,
     allContentfulService,
     allContentfulCaseStudy,
     allContentfulPublication,
@@ -63,6 +64,7 @@ const HomePage = ({ data }) => {
 
       <Hero
         {...contentfulHero}
+        formLink={contentfulSiteData.formLink}
         setEmailCallback={setEmail}
         toggleModalOpen={handleModalOpen}
       />
@@ -143,6 +145,9 @@ export const query = graphql`
           url
         }
       }
+    }
+    contentfulSiteData {
+      formLink
     }
     allContentfulService(sort: { fields: contentful_id, order: ASC }) {
       edges {

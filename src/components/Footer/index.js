@@ -21,7 +21,7 @@ import {
 
 const Footer = () => {
   const { header } = useStaticQuery(query).contentfulHero;
-  const { twitter, linkedIn, copyright } = useStaticQuery(
+  const { twitter, linkedIn, copyright, formLink } = useStaticQuery(
     query
   ).contentfulSiteData;
 
@@ -33,7 +33,7 @@ const Footer = () => {
             <h3>{header}</h3>
             <Button clickOrigin='Header'>
               <a
-                href='https://www.surveymonkey.co.uk/r/NHNTQ9T'
+                href={formLink}
                 target='_blank'
                 rel='noreferrer'
                 aria-label='Twitter'
@@ -122,6 +122,7 @@ const query = graphql`
       twitter
       linkedIn
       copyright
+      formLink
     }
     contentfulHero {
       header

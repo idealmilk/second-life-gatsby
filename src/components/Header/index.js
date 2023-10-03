@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 
 import { Logo, LogoWhite } from 'assets/Logos';
 import { Button } from 'components/common/Buttons';
@@ -14,6 +14,8 @@ import {
 } from './styled';
 
 const Header = () => {
+  const { formLink } = useStaticQuery(query).contentfulSiteData;
+
   const [activeNavItem, setActiveNavItem] = useState('');
   const [navBar, setNavBar] = useState(false);
   const [whiteLogoOpacity, setWhiteLogoOpacity] = useState(1);
@@ -117,7 +119,7 @@ const Header = () => {
           <ButtonWrap>
             <Button clickOrigin='Header'>
               <a
-                href='https://www.surveymonkey.co.uk/r/NHNTQ9T'
+                href={formLink}
                 target='_blank'
                 rel='noreferrer'
                 aria-label='Twitter'
@@ -131,5 +133,13 @@ const Header = () => {
     </Container>
   );
 };
+
+const query = graphql`
+  query {
+    contentfulSiteData {
+      formLink
+    }
+  }
+`;
 
 export default Header;

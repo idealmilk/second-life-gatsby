@@ -4,7 +4,13 @@ import { Button } from 'components/common/Buttons';
 
 import { Container, InnerWrapStyled, ContentWrap, FormWrap } from './styled';
 
-const Hero = ({ header, subheader, setEmailCallback, toggleModalOpen }) => {
+const Hero = ({
+  header,
+  subheader,
+  formLink,
+  setEmailCallback,
+  toggleModalOpen,
+}) => {
   return (
     <Container>
       <InnerWrapStyled>
@@ -14,7 +20,7 @@ const Hero = ({ header, subheader, setEmailCallback, toggleModalOpen }) => {
           <FormWrap>
             <Button clickOrigin='Header'>
               <a
-                href='https://www.surveymonkey.co.uk/r/NHNTQ9T'
+                href={formLink}
                 target='_blank'
                 rel='noreferrer'
                 aria-label='Twitter'
