@@ -26,7 +26,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-      allContentfulBlog {
+      allContentfulBlogPost {
         edges {
           node {
             slug
@@ -66,7 +66,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  res.data.allContentfulBlog.edges.forEach((edge) => {
+  res.data.allContentfulBlogPost.edges.forEach((edge) => {
     createPage({
       component: path.resolve('./src/templates/Blog/index.js'),
       path: `/blog/${edge.node.slug}`,

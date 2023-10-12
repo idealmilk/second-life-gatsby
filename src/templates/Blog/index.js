@@ -6,7 +6,7 @@ import { PageHeader, RichText, SEO } from 'components';
 import { BodyWrap } from 'components/common/Containers/styled';
 
 const BlogTemplate = ({ data }) => {
-  const { title, metaDescription, body, coverImage } = data.contentfulBlog;
+  const { title, metaDescription, body, coverImage } = data.contentfulBlogPost;
 
   return (
     <MainLayout>
@@ -31,7 +31,7 @@ const BlogTemplate = ({ data }) => {
 
 export const query = graphql`
   query($slug: String!) {
-    contentfulBlog(slug: { eq: $slug }) {
+    contentfulBlogPost(slug: { eq: $slug }) {
       title
       metaDescription
       publishedDate(formatString: "MMMM D YYYY")

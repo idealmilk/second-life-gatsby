@@ -6,7 +6,7 @@ import { Blogs, PageHeader, SEO } from 'components';
 import { TightInnerWrap } from 'components/common/Containers/styled';
 
 const BlogPage = ({ data }) => {
-  const { contentfulBlogPage, allContentfulBlog } = data;
+  const { contentfulBlogPage, allContentfulBlogPost } = data;
   const {
     title,
     header,
@@ -14,6 +14,8 @@ const BlogPage = ({ data }) => {
     metaDescription,
     metaImage,
   } = contentfulBlogPage;
+
+  console.log(allContentfulBlogPost);
 
   return (
     <MainLayout>
@@ -26,7 +28,7 @@ const BlogPage = ({ data }) => {
       <PageHeader title={title} header={header} />
 
       <TightInnerWrap>
-        <Blogs {...allContentfulBlog} />
+        <Blogs {...allContentfulBlogPost} />
       </TightInnerWrap>
     </MainLayout>
   );
@@ -45,7 +47,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulBlog(sort: { fields: publishedDate, order: DESC }) {
+    allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
       edges {
         node {
           title
